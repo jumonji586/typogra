@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/sample', function () {
+    return view('sample');
+});
+
+Route::prefix('posts')->name('posts.')->group(function () {
+    Route::get('/index', [PostController::class, 'index'])->name('index');
+});
+
+// Route::get('posts', [PostController::class, 'index']);
