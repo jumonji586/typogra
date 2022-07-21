@@ -9,13 +9,18 @@
     @yield('title')
   </title>
   <link href="/css/style.css" rel="stylesheet">
+  @vite(['resources/css/app.css','resources/scss/app.scss', 'resources/js/app.js'])
 </head>
-</style>
 
 <body>
+  <div class="ppp">
+    <p>aaa</p>
+  </div>
   <div>
     @yield('content')
   </div>
+  
 </body>
+
 
 </html>
