@@ -1,0 +1,22 @@
+.post-box1{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.post-item{
+    width: 23%;
+    &__img-box{
+        background-color: #fff;
+        padding: 15px;
+        display: block;
+        
+        &--empty{
+            background-color: #B6B6B6; 
+        }
+    }
+    &__data-box{
+        display: flex;
+    }
+}

@@ -9,17 +9,15 @@
     @yield('title')
   </title>
   <link href="/css/style.css" rel="stylesheet">
-  @vite(['resources/css/app.css','resources/scss/app.scss', 'resources/js/app.js'])
+  @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
-  <div class="ppp">
-    <p>aaa</p>
-  </div>
-  <div>
+  <div class="wrapperAll">
+    @include('header')
     @yield('content')
+    @include('footer')
   </div>
-  
 </body>
 
 

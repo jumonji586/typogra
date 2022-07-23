@@ -1,0 +1,56 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", Verdana, "メイリオ", Meiryo, sans-serif;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: nomal;
+	box-sizing: border-box;
+	font-size:13px;
+	line-height: 1.5;
+	list-style: none;
+	color:#ffffff;
+	text-decoration: none;
+	word-break: break-all;
+  }
+  a{
+      color:#ffffff;
+      transition: opacity 0.2s;
+      cursor: pointer;
+    }
+    input[type=submit] {
+        /* iosのデフォルトスタイル打消し */
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    input[type="submit"],label{
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+    a:hover,input[type="submit"]:hover,label:hover{
+        opacity:0.7;
+    }
+    img{
+        max-width: 100%;
+    }
+.wid100{width:100% !important;}
+br{line-height:0;}
+.underline{text-decoration:underline}
+.relative{position:relative;}
+.fw-b{font-weight: bold;}
+.tx-c{text-align: center;}
+.mt5{margin-top: 5px !important;}
+.mt10{margin-top: 10px !important;}
+.mt15{margin-top: 15px !important;}
+.mt20{margin-top: 20px !important;}
+.mt30{margin-top: 30px !important;}
+.mt40{margin-top: 40px !important;}
+.mt50{margin-top: 50px !important;}
+
+.contrast{
+    image-rendering: -webkit-optimize-contrast;
+}
+.anchor-link{
+    transform:translate(0,-50px);
+}

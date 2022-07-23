@@ -13,7 +13,7 @@ class PostController extends Controller
         $allPosts = array();
 
         foreach ($themes as $theme){
-            $posts = Post::where('theme_id', '=', $theme->id)->orderByDesc('created_at')->get();
+            $posts = Post::where('theme_id', '=', $theme->id)->orderByDesc('created_at')->get()->take(4);
             $allPosts[$theme->title] = $posts;
           }
 

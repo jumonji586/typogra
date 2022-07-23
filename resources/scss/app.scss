@@ -1,10 +1,5 @@
-.ppp {
-    background: red;
-    width: 400px;
-    height: 400px;
-    p {
-      color: green;
-      font-weight: bold;
-      text-align: center;
-    }
-  }
+@use'setting';
+@use'common';
+@use'article-page';
+@use'my-page';
+@use'other-page';

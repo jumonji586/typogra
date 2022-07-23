@@ -16,12 +16,7 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/sample', function () {
-    return view('sample');
-});
 
 Route::prefix('posts')->name('posts.')->group(function () {
     Route::get('/index', [PostController::class, 'index'])->name('index');
 });
-
-// Route::get('posts', [PostController::class, 'index']);
