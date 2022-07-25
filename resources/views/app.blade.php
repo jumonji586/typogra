@@ -13,11 +13,12 @@
 </head>
 
 <body>
-  <div class="wrapperAll">
+  <div id="app" class="wrapperAll">
     @include('header')
     @yield('content')
     @include('footer')
   </div>
+
 </body>
 
 

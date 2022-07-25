@@ -14,5 +14,5 @@
         </a>
     </nav>
 </section>
-
+<side-menu></side-menu>
 <!-- <a class="sede-menu-open" href="">MENU</a> -->
