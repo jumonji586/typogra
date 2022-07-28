@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +14,26 @@ use App\Http\Controllers\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::prefix('login')->name('login.')->group(function () {
+//     Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('{provider}');
+//     Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('{provider}.callback');
+// });
+// Route::prefix('register')->name('register.')->group(function () {
+//     Route::get('/{provider}', 'Auth\RegisterController@showProviderUserRegistrationForm')->name('{provider}');
+//     Route::post('/{provider}', 'Auth\RegisterController@registerProviderUser')->name('{provider}');
+// });
+Route::prefix('login')->name('login.')->group(function () {
+    Route::get('/{provider}', [LoginController::class, 'redirectToProvider'])->name('{provider}');
+    Route::get('/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('{provider}.callback');
+});
+Route::prefix('register')->name('register.')->group(function () {
+    Route::get('/{provider}',  [RegisterController::class, 'showProviderUserRegistrationForm'])->name('{provider}');
+    Route::post('/{provider}',  [RegisterController::class, 'registerProviderUser'])->name('{provider}');
 });
 
 Route::prefix('posts')->name('posts.')->group(function () {
     Route::get('/index', [PostController::class, 'index'])->name('index');
 });
+Route::get('/',  [PostController::class, 'index'])->name('posts.index');
