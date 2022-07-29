@@ -1,7 +1,8 @@
 /* ----全体--------------------------------------------------------- */
 
 body {
-    background-color: #7D7D7D;
+    background-color: #6b7b86;
+    background-color: #6b7b86;
     // counter-reset:count-number;
 }
 
@@ -12,13 +13,16 @@ body {
 /* ----------header------------------------------------------------- */
 
 .header {
-    background-color: #7D7D7D;
+    background-color: #6b7b86;
     display: flex;
     justify-content: space-between;
-    padding-right: 150px;
+    padding-right: 100px;
     // align-items: center;
     &__logo {
         width: 500px;
+        width: 280px;
+        width: 380px;
+        // padding: 15px;
     }
 
     &__nav-box {

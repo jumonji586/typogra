@@ -35,6 +35,8 @@ export default {
     width: 64px;
     height: 64px;
     background-color: #3B3B3B;
+    background-color: #464f55;
+    /* border-radius: 50%; */
     padding: 35% 28%;
 }
 .side-menu-open-btn div{

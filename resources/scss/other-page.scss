@@ -1,0 +1,210 @@
+.page-type2{
+    background:url(/img/bg-form.png);
+    background-color:#6b7b86 ;
+    padding:50px 3%;
+    width: 100%;
+    top:0;
+    left: 0;
+    background-position: 0 -30px;
+    min-height: calc(100vh - 134px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.page-type2__title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.page-type2__title::after{
+    content:"";
+    display: inline-block;
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+}
+.page-type2__inner{
+    background-color: rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 50%;
+    margin: 0 auto;
+    padding:45px 60px 60px;
+}
+.page-type2__input,
+.page-type2__textarea{
+    width: 100%;
+    padding:10px 7px;
+    color: #000;
+    background-color: #6B7B86;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+}
+.page-type2__checkbox{
+    width: auto;
+    transform: scale(1.3);
+    margin-right: 10px;
+    vertical-align: -9%;
+    margin-top:4px;
+}
+.page-type2__second-title{
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+    font-size: 14px;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.page-type2__item-name{
+    margin-top: 20px;
+}
+.page-type2__inner .rule-privacy-box{
+    display: flex;
+}
+.page-type2_btn-box{
+    margin-top:50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.page-type2__cancel-btn,
+.page-type2__enter-btn{
+    width: 47%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    padding:10px 7px;
+    color: #000;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.page-type2__enter-btn{
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.profedit-img-box{
+    position: relative;
+    width: 150px;
+    border-radius: 50%;
+    height: 150px;
+    overflow: hidden;
+    margin:30px auto 0 auto;
+    background-color: #fff;
+}
+.profedit-img-box2{
+    width: 50%;
+    min-height: 80px;
+    height: auto;
+    border-radius: 0;
+    background-color: #b6b6b6;
+}
+.profedit-img-box input{
+    display:none;
+}
+.article-img-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px auto 0 ;
+    background-color: #6d6d6d;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.article-img-label img{
+    width: 30px;
+}
+#article-img{
+    display: none;
+}
+#article-img-preview{
+    display: none;
+    margin:30px auto 0;
+    width: 100%;
+    max-width:300px ;
+    border: 1px solid #727272;
+
+}
+.profedit-img-box label {
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.profedit-img-box label img{
+    width: 30px;
+}
+
+.new-prof-img,.old-prof-img{
+    top:0;
+    left:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.page-type2__inner .sns-btn{
+    display: block;
+    color: #000;
+    padding:10px;
+    text-align: center;
+    font-weight: 600;
+    // border: 3px double #fff;
+    background-color: #3B3B3B;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top:30px;
+    // margin-left:auto;
+    // margin-right: auto;
+    max-width: 250px;
+}
+.page-type2__inner .sns-btn2{
+    margin-top:15px;
+    margin-bottom:40px;
+}
+.page-type2__inner .sns-btn img{
+    width: 25px;
+    image-rendering: -webkit-optimize-contrast;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+.form-prof-img{
+    border-radius: 50%;
+    margin:30px auto 20px;
+    display: block;
+    width: 70px;
+    height: 70px;
+}
+.error-message{
+    margin-top: 10px;
+}
+.error-message li{
+    background-color:#ffb7b7 ;
+    color: #621111;
+    padding: 6px;
+    margin-bottom: 5px;
+  }
+.succes-message{
+    margin: 10px 0 5px;
+    background-color:#daf8ff ;
+    color: #0b173d;
+    padding: 6px;
+}
+
