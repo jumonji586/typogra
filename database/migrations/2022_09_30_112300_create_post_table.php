@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('display_id')->unique()->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->string('image_path'); 
