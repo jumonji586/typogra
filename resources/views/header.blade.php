@@ -17,7 +17,7 @@
         </a>
         @endguest
         @auth
-        {{Auth::user()->name}}
+        <a href="{{ route('posts.create') }}">投稿する</a>
         @endauth
     </nav>
 </section>

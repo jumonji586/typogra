@@ -16,14 +16,11 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 Auth::routes();
 
-// Route::prefix('login')->name('login.')->group(function () {
-//     Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('{provider}');
-//     Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('{provider}.callback');
-// });
-// Route::prefix('register')->name('register.')->group(function () {
-//     Route::get('/{provider}', 'Auth\RegisterController@showProviderUserRegistrationForm')->name('{provider}');
-//     Route::post('/{provider}', 'Auth\RegisterController@registerProviderUser')->name('{provider}');
-// });
+Route::get('/',  [PostController::class, 'index'])->name('posts.index');
+Route::resource('posts', PostController::class);
+
+Route::get('posts/create/{theme_id}', [PostController::class, 'create'])->name('posts.create.{theme_id}');
+
 Route::prefix('login')->name('login.')->group(function () {
     Route::get('/{provider}', [LoginController::class, 'redirectToProvider'])->name('{provider}');
     Route::get('/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('{provider}.callback');
@@ -33,7 +30,7 @@ Route::prefix('register')->name('register.')->group(function () {
     Route::post('/{provider}',  [RegisterController::class, 'registerProviderUser'])->name('{provider}');
 });
 
-Route::prefix('posts')->name('posts.')->group(function () {
-    Route::get('/index', [PostController::class, 'index'])->name('index');
-});
-Route::get('/',  [PostController::class, 'index'])->name('posts.index');
+// Route::prefix('posts')->name('posts.')->group(function () {
+//     Route::get('/index', [PostController::class, 'index'])->name('index');
+// });
+

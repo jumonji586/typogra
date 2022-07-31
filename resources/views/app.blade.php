@@ -18,7 +18,7 @@
     @yield('content')
     @include('footer')
   </div>
-
+  <script src="/js/typogra.js"></script>
 </body>
 
 

@@ -5,7 +5,7 @@
 @section('content')
 
 @foreach($allPosts as $key => $posts)
-<p class="mt50">{{$key}}</p>
+<p class="mt50">{{$themes[$key]->title}}</p>
 <div class="post-box1">
     @foreach($posts as $post)
         @include('posts.card')
@@ -17,6 +17,8 @@
         @endfor 
     @endif
          </div>
+         <a href="{{ route('posts.create.{theme_id}', ['theme_id' => $key]) }}">投稿する</a>
+
 </div>
 
 @endforeach
