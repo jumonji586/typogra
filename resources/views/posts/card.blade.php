@@ -1,15 +1,24 @@
-
+@if (isset($pageTypePostShow))
+<div class="post-item post-item-detail">
+@else
 <div class="post-item">
-    <a class="post-item__img-box">
-        <img class="post-item__img" src="{{ $post->thumb_image_path }}" alt="{{ $post->title }}">
-    </a>
-    <div class="post-item__data-box">
-        <p class="post-item__text">
-            <span class="post-item__date">
+@endif
+    <div class="post-item-img-box">
+
+    @if (isset($pageTypePostShow))
+        <img class="post-item-img-box__img" src="{{ $post->image_path }}" alt="">
+    @else
+        <img class="post-item-img-box__img" src="{{ $post->thumb_image_path }}" alt="">
+        <a class="post-item-img-box__link" href="{{ route('posts.show', ['display_id' => $post->display_id]) }}"></a>
+    @endif
+    </div>
+    <div class="post-item-data-box">
+        <p class="post-item-data-box__text">
+            <span class="post-item-data-box__date">
                 {{ $post->created_at->format('Y/m/d') }}
             </span>
-            <a class="post-item__user-name" href="">
-                by {{ mb_strimwidth( $post->user->name, 0, 12, '…', 'UTF-8' ) }}
+            <a class="post-item-data-box__user-name" href="">
+                by {{ mb_strimwidth($post->user->name, 0, 12, '…', 'UTF-8') }}
             </a>
         </p>
         <div>

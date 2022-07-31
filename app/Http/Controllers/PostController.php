@@ -53,4 +53,26 @@ class PostController extends Controller
 
         return redirect('/#new')->with('message', '投稿が完了しました');
     }
+    public function show(string $display_id, Post $post)
+    {
+        $targetPost = Post::where('display_id', $display_id)->first();
+ 
+        // $imgSize = getimagesize((empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $targetPost->image_path);
+        // XAMPP環境だと↑でOKだったがdockerだとエラー出たのでいったん↓に変更。
+        $imgSize = getimagesize(ltrim($targetPost->image_path, '/'));
+        
+        $aspect = $imgSize[0] / $imgSize[1];
+        if ($aspect > 1.5) {
+            $imgClass = "wide-img";
+        } elseif ($aspect < 0.8) {
+            $imgClass = "heigh-img";
+        }else{
+            $imgClass = null;
+        }
+        return view('posts.show', [
+            'post' => $targetPost,
+            'pageTypePostShow' => true,
+            'imgClass' => $imgClass,
+        ]);
+    }
 }

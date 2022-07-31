@@ -21,6 +21,8 @@ Route::resource('posts', PostController::class);
 
 Route::get('posts/create/{theme_id}', [PostController::class, 'create'])->name('posts.create.{theme_id}');
 
+Route::get('/posts/detail/{display_id}', [PostController::class, 'show'])->name('posts.show');
+
 Route::prefix('login')->name('login.')->group(function () {
     Route::get('/{provider}', [LoginController::class, 'redirectToProvider'])->name('{provider}');
     Route::get('/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('{provider}.callback');

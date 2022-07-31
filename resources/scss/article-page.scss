@@ -4,19 +4,29 @@
     width: 60%;
     margin: 0 auto;
 }
-
 .post-item{
     width: 23%;
-    &__img-box{
-        background-color: #fff;
-        padding: 15px;
-        display: block;
-        
-        &--empty{
-            background-color: #B6B6B6; 
-        }
-    }
-    &__data-box{
-        display: flex;
-    }
 }
+.post-item-detail{
+    
+}
+.post-item-img-box{
+    background-color: #fff;
+    padding: 15px;
+    display: block;
+    position: relative;
+}
+.post-item-img-box--empty{
+    background-color: #B6B6B6; 
+}
+.post-item-img-box__link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+}
+.post-item-data-box{
+    display: flex;
+}
+
