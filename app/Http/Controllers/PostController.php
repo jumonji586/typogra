@@ -75,4 +75,27 @@ class PostController extends Controller
             'imgClass' => $imgClass,
         ]);
     }
+    public function like(Request $request, Post $post)
+    {
+        $post->likes()->detach($request->user()->id);
+        $post->likes()->attach($request->user()->id);
+
+        // $request->user()はRequestクラスのメソッド。
+        // リクエストを送ったユーザーが取得できる
+
+        return [
+            'id' => $post->id,
+            'countLikes' => $post->count_likes,
+        ];
+    }
+
+    public function unlike(Request $request, Post $post)
+    {
+        $post->likes()->detach($request->user()->id);
+
+        return [
+            'id' => $post->id,
+            'countLikes' => $post->count_likes,
+        ];
+    }
 }

@@ -16,13 +16,16 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 Auth::routes();
 
+// posts
 Route::get('/',  [PostController::class, 'index'])->name('posts.index');
 Route::resource('posts', PostController::class);
 
 Route::get('posts/create/{theme_id}', [PostController::class, 'create'])->name('posts.create.{theme_id}');
-
 Route::get('/posts/detail/{display_id}', [PostController::class, 'show'])->name('posts.show');
+Route::put('posts/{post}/like',  [PostController::class, 'like'])->name('posts.like')->middleware('auth');
+Route::delete('posts/{post}/like', [PostController::class, 'unlike'])->name('posts.unlike')->middleware('auth');
 
+// Auth
 Route::prefix('login')->name('login.')->group(function () {
     Route::get('/{provider}', [LoginController::class, 'redirectToProvider'])->name('{provider}');
     Route::get('/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('{provider}.callback');
