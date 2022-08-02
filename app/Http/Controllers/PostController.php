@@ -71,7 +71,7 @@ class PostController extends Controller
         }
         return view('posts.show', [
             'post' => $targetPost,
-            'pageTypePostShow' => true,
+            // 'pageTypePostShow' => true,
             'imgClass' => $imgClass,
         ]);
     }

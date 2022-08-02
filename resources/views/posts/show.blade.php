@@ -4,6 +4,6 @@
 
 @section('content')
 
-@include('posts.card')
+@include('posts.card-detail')
 
 @endsection

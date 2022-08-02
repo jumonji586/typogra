@@ -16,10 +16,9 @@
             @include('posts.card-empty') 
         @endfor 
     @endif
-         </div>
-         <a href="{{ route('posts.create.{theme_id}', ['theme_id' => $key]) }}">投稿する</a>
 
 </div>
+<a href="{{ route('posts.create.{theme_id}', ['theme_id' => $key]) }}">投稿する</a>
 
 @endforeach
 @endsection
