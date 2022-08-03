@@ -10,7 +10,7 @@ body {
     position: relative;
 }
 
-/* ----------header------------------------------------------------- */
+// header-------------------------------------------------
 
 .header {
     background-color: #6b7b86;
@@ -43,8 +43,32 @@ body {
 
     }
 }
+// layout---------------------------------------------------
+.layout-box{
+    display: grid;
+    grid-template:
+    " sub1   ...... center ...... sub2  "  
+    / 300px 1fr minmax(auto, 900px) 1fr 300px;
+    margin-top: 55px;
+}
+.sub-area1{
+    grid-area:sub1;
+    padding: 24px 30px;
+}
+.sub-area2{
+    grid-area:sub2;
+    padding: 24px 30px;
+}
+.center-area{
+    grid-area:center;
+}
 
-/* ----------footer------------------------------------------------- */
+
+
+.sub-area1__text{
+    line-height: 2;
+}
+// footer---------------------------------------------------
 
 .footer{
     text-align: center;

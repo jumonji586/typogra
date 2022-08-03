@@ -1,10 +1,10 @@
 <div class="post-detail">
     <div class="post-detail-img-box">
-        <img class="post-item-img-box__img" src="{{ $post->image_path }}" alt="">
+        <img class="post-detail-img-box__img" src="{{ $post->image_path }}" alt="">
     </div>
     <div class="post-detail-data-box">
         <p class="post-detail-data-box__text">
-            <span class="post-item-data-box__date">
+            <span class="post-detail-data-box__date">
                 {{ $post->created_at->format('Y/m/d') }}
             </span>
             <a class="post-detail-data-box__user-name" href="">

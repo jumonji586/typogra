@@ -1,10 +1,10 @@
 <template>
-  <div class="good-btn">
+  <div class="like-btn-box">
     <a class="heart-mark-box" @click="clickLike" :class="{'active-heart':this.isLikedBy, 'heart-anime':this.gotToLike}">
-      <img class="heart-mark-black icon" src="/img/icon/icon-heart-white.png" alt="">
+      <img class="heart-mark-white icon" src="/img/icon/icon-heart-white.png" alt="">
       <img class="heart-mark-red icon" src="/img/icon/icon-heart-red.png" alt="">
     </a>
-    <span>{{ countLikes }}</span>
+    <span class="like-count">{{ countLikes }}</span>
   </div>
 </template>
 
@@ -64,20 +64,26 @@
 </script>
 
 <style scoped>
+.like-btn-box{
+    display: flex;
+    align-items: flex-end;
+    /* height: 100%; */
+}
 .heart-mark-box{
   display: inline-block;
-  width: 20px;
+    /* height: 100%; */
+    margin-right: 2px;
 }
 .heart-mark-box img{
-  width: 100%;
+    height: 100%;
 }
-.heart-mark-box .heart-mark-black{
+.heart-mark-box .heart-mark-white{
   display: block;
 }
 .heart-mark-box .heart-mark-red{
   display: none;
 }
-.heart-mark-box.active-heart .heart-mark-black{
+.heart-mark-box.active-heart .heart-mark-white{
   display: none;
 }
 .heart-mark-box.active-heart .heart-mark-red{
