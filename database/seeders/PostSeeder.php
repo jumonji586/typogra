@@ -16,7 +16,7 @@ class PostSeeder extends Seeder
     public function run()
     {
         Post::create([
-            'description' => 'description1',
+            'description' => '悟空の持つカリスマ性をイメージして制作しました。',
             'user_id' => '2',
             'display_id' => 'abc1',
             'image_path' => '/storage/uploads/illust_image/sample1.jpg',
@@ -25,85 +25,31 @@ class PostSeeder extends Seeder
             'theme_id' => '1',
         ]);
         Post::create([
-            'description' => 'description2',
+            'description' => 'いいね・コメント頂けると喜びます。',
             'user_id' => '2',
             'display_id' => 'abc2',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
+            'image_path' => '/storage/uploads/illust_image/sample2.jpg',
+            'thumb_image_path' => '/storage/uploads/illust_thumb/sample2.jpg',
             'status' => '',
             'theme_id' => '1',
         ]);
         Post::create([
-            'description' => 'description2',
+            'description' => '手書き',
             'user_id' => '2',
             'display_id' => 'abc3',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
+            'image_path' => '/storage/uploads/illust_image/sample3.jpg',
+            'thumb_image_path' => '/storage/uploads/illust_thumb/sample3.jpg',
             'status' => '',
             'theme_id' => '1',
         ]);
         Post::create([
-            'description' => 'description2',
-            'user_id' => '2',
+            'description' => '',
+            'user_id' => '3',
             'display_id' => 'abc4',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
-            'status' => '',
-            'theme_id' => '1',
-        ]);
-        Post::create([
-            'description' => 'description2',
-            'user_id' => '2',
-            'display_id' => 'abc5',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
-            'status' => '',
-            'theme_id' => '1',
-        ]);
-        Post::create([
-            'description' => 'description2',
-            'user_id' => '2',
-            'display_id' => 'abc6',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
+            'image_path' => '/storage/uploads/illust_image/sample4.jpg',
+            'thumb_image_path' => '/storage/uploads/illust_thumb/sample4.jpg',
             'status' => '',
             'theme_id' => '2',
-        ]);
-        Post::create([
-            'description' => 'description2',
-            'user_id' => '2',
-            'display_id' => 'abc7',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
-            'status' => '',
-            'theme_id' => '2',
-        ]);
-        Post::create([
-            'description' => 'description2',
-            'user_id' => '2',
-            'display_id' => 'abc8',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
-            'status' => '',
-            'theme_id' => '1',
-        ]);
-        Post::create([
-            'description' => 'description2',
-            'user_id' => '2',
-            'display_id' => 'abc9',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
-            'status' => '',
-            'theme_id' => '1',
-        ]);
-        Post::create([
-            'description' => 'description2',
-            'user_id' => '2',
-            'display_id' => 'abc10',
-            'image_path' => '/storage/uploads/illust_image/sample1.jpg',
-            'thumb_image_path' => '/storage/uploads/illust_thumb/sample1.jpg',
-            'status' => '',
-            'theme_id' => '3',
         ]);
     }
 }
