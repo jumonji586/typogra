@@ -13,6 +13,11 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function theme()
+    {
+        return $this->belongsTo(Theme::class);
+    }
+
     public function likes()
     {
         return $this->belongsToMany('App\Models\User', 'likes')->withTimestamps();

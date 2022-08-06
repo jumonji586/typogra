@@ -53,11 +53,11 @@ body {
 }
 .sub-area1{
     grid-area:sub1;
-    padding: 24px 30px;
+    padding: 0 30px;
 }
 .sub-area2{
     grid-area:sub2;
-    padding: 24px 30px;
+    padding: 0 30px;
 }
 .center-area{
     grid-area:center;
@@ -80,6 +80,7 @@ body {
     font-family: SenobiGothic;
     font-weight: 100;
     margin-bottom: 10px;
+    line-height: 1;
 }
 .user-rank-item{
     display: flex;
