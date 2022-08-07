@@ -1,12 +1,15 @@
 <div class="post-detail">
     <div class="post-detail-img-box {{ $imgClass }} ">
         <img class="post-detail-img-box__img" src="{{ $post->image_path }}" alt="">
+        <common-modal>
+            <img src="{{ $post->image_path }}" alt="">
+        </common-modal>
     </div>
     <div class="post-detail-data-box">
         <h2>
-            <a class="post-detail-data-box__theme" href="">Theme: {{$post->theme->title}}</a>
+            <a class="post-detail-data-box__theme" href="">Theme: {{ $post->theme->title }}</a>
         </h2>
-        <p class="post-detail-data-box__description">{{$post->description}}</p>
+        <p class="post-detail-data-box__description">{{ $post->description }}</p>
         <div class="post-detail-data-box__inner">
             <a href="">
                 <img class="post-detail-data-box__user-icon" src="{{ $post->user->prof_image_path }}" alt="">
@@ -16,7 +19,7 @@
                     {{ $post->created_at->format('Y/m/d h:m') }}
                 </p>
                 <a class="post-detail-data-box__user-name" href="">
-                 {{ $post->user->name }}
+                    {{ $post->user->name }}
                 </a>
             </div>
             <post-like :initial-is-liked-by='@json($post->isLikedBy(Auth::user()))'
@@ -24,6 +27,6 @@
                 endpoint="{{ route('posts.like', ['post' => $post]) }}">
             </post-like>
         </div>
-        
+
     </div>
 </div>
