@@ -167,6 +167,7 @@
 .post-detail-img-box{
     max-width: 550px;
     border: 7px solid #fff;
+    position: relative;
 }
 .post-detail-data-box{
     // background-color: rgba(0, 0, 0, 0.1);
@@ -189,6 +190,7 @@
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 .post-detail-data-box__user-icon{
     width: 40px;

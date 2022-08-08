@@ -97,4 +97,22 @@ class PostController extends Controller
             'countLikes' => $post->count_likes,
         ];
     }
+    public function destroy(Post $post)
+    {
+        $this->authorize('delete', $post);
+        $post->delete();
+        return redirect()->route('posts.index')->with('message', '投稿を削除しました');
+    }
+    public function recommendOn(Post $post)
+    {
+        $this->authorize('recommend', $post);
+        $post->status = "recommend";
+        $post->save();
+    }
+    public function recommendOff(Post $post)
+    {
+        $this->authorize('recommend', $post);
+        $post->status = null;
+        $post->save();
+    }
 }

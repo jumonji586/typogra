@@ -24,6 +24,8 @@ Route::get('posts/create/{theme_id}', [PostController::class, 'create'])->name('
 Route::get('/posts/detail/{display_id}', [PostController::class, 'show'])->name('posts.show');
 Route::put('posts/{post}/like',  [PostController::class, 'like'])->name('posts.like')->middleware('auth');
 Route::delete('posts/{post}/like', [PostController::class, 'unlike'])->name('posts.unlike')->middleware('auth');
+Route::put('posts/{post}/recommendset',  [PostController::class, 'recommendOn'])->name('posts.recommendOn')->middleware('auth');
+Route::delete('posts/{post}/recommendset',  [PostController::class, 'recommendOff'])->name('posts.recommendOff')->middleware('auth');
 
 // Auth
 Route::prefix('login')->name('login.')->group(function () {

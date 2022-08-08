@@ -3,6 +3,7 @@ import Vue from 'vue/dist/vue.esm.js'
 import SideMenu from './components/SideMenu.vue'
 import PostLike from './components/PostLike.vue'
 import CommonModal from './components/CommonModal.vue'
+import PostEditMenu from './components/PostEditMenu.vue'
 
 const app = new Vue({
     el: '#app',
@@ -10,5 +11,6 @@ const app = new Vue({
       SideMenu,
       PostLike,
       CommonModal,
+      PostEditMenu,
     }
   })
