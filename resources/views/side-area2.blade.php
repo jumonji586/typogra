@@ -1,6 +1,6 @@
 <aside class="sub-area2">
     <div class="user-rank-box">
-        <h2 class="user-rank-title">User Ranking</h2>
+        <h2 class="side-area-title mb10">User Ranking</h2>
         @foreach($rankUsers as $key => $rankUser)
         <a class="user-rank-item">
             <span class="user-rank-num">{{ $key + 1 }}</span>

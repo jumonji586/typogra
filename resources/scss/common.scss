@@ -74,14 +74,55 @@ body {
     text-align: center;
     padding: 20px;
 }
-// side-area2-------------------------------------------------
-.user-rank-title{
+
+// side-area-common------------------------------------------------
+.side-area-title{
     font-size: 18px;
     font-family: SenobiGothic;
     font-weight: 100;
-    margin-bottom: 10px;
     line-height: 1;
 }
+// side-area1-------------------------------------------------
+.recommend-post-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.recommend-post-item{
+    width: 46.5%;
+    margin-bottom: 17px;
+}
+.recommend-post-img-box{
+    background-color: #fff;
+    display: block;
+    position: relative;
+    padding-top: calc(100% - 8px);
+    overflow: hidden;
+    border: 4px solid #fff;
+}
+.recommend-post-img-box:hover .recommend-post-img-box__img{
+    transform: scale(1.1);
+}
+.recommend-post-img-box__link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+}
+.recommend-post-img-box__img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left:0;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    max-width: none;
+}
+// side-area2-------------------------------------------------
+
 .user-rank-item{
     display: flex;
     // justify-content: space-between;

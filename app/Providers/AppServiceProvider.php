@@ -28,8 +28,11 @@ class AppServiceProvider extends ServiceProvider
     {
         if (Schema::hasTable('users')) {
             $rankUsers = User::withCount(['posts', 'likesOfUser'])->orderByDesc('likes_of_user_count')->get()->take(10);
-            // dd($rankUsers);
             view()->share('rankUsers', $rankUsers);
+        }
+        if (Schema::hasTable('posts')) {
+            $recommendPosts = Post::where('status', '=', 'recommend')->inRandomOrder()->get()->take(4);
+            view()->share('recommendPosts', $recommendPosts);
         }
     }
 }
