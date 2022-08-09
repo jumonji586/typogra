@@ -11,9 +11,13 @@
   <link href="/css/style.css" rel="stylesheet">
   @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
-
+<style>
+  [v-cloak] {
+      display: none;
+    }
+</style>
 <body>
-  <div id="app" class="wrapperAll">
+  <div id="app" class="wrapperAll" v-cloak>
     @include('header')
     @yield('content')
     @include('footer')
