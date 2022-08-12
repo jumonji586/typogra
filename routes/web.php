@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,25 @@ Route::delete('posts/{post}/like', [PostController::class, 'unlike'])->name('pos
 Route::put('posts/{post}/recommendset',  [PostController::class, 'recommendOn'])->name('posts.recommendOn')->middleware('auth');
 Route::delete('posts/{post}/recommendset',  [PostController::class, 'recommendOff'])->name('posts.recommendOff')->middleware('auth');
 
+// comment
+Route::post('comment/sendcomment', [CommentController::class, 'sendComment'])->name('comment.sendComment');
+Route::get('comment/getcomment', [CommentController::class, 'getComment'])->name('comment.getComment');
+Route::delete('comment/deletecomment', [CommentController::class, 'deleteComment'])->name('comment.deleteComment');
+Route::post('comment/sendsubcomment', [CommentController::class, 'sendSubComment'])->name('comment.sendSubComment');
+Route::get('comment/getsubcomment', [CommentController::class, 'getSubComment'])->name('comment.getSubComment');
+Route::delete('comment/deletesubcomment', [CommentController::class, 'deleteSubComment'])->name('comment.deleteSubComment');
+
+
+
+// Route::prefix('comment')->name('comment.')->group(function () {
+//     Route::post('/sendcomment', 'CommentController@sendComment')->name('sendComment');
+//     Route::get('/getcomment', 'CommentController@getComment')->name('getComment');
+//     Route::delete('/deletecomment', 'CommentController@deleteComment')->name    ('deleteComment');
+//     Route::post('/sendsubcomment', 'CommentController@sendSubComment')->name    ('sendSubComment');
+//     Route::get('/getsubcomment', 'CommentController@getSubComment')->name   ('getSubComment');
+//     Route::delete('/deletesubcomment', 'CommentController@deleteSubComment')->name('deleteSubComment');
+// });
+
 // Auth
 Route::prefix('login')->name('login.')->group(function () {
     Route::get('/{provider}', [LoginController::class, 'redirectToProvider'])->name('{provider}');
@@ -36,6 +56,10 @@ Route::prefix('register')->name('register.')->group(function () {
     Route::get('/{provider}',  [RegisterController::class, 'showProviderUserRegistrationForm'])->name('{provider}');
     Route::post('/{provider}',  [RegisterController::class, 'registerProviderUser'])->name('{provider}');
 });
+
+
+
+
 
 // Route::prefix('posts')->name('posts.')->group(function () {
 //     Route::get('/index', [PostController::class, 'index'])->name('index');

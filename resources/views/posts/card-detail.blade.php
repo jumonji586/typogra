@@ -37,4 +37,9 @@
         </div>
 
     </div>
+    
 </div>
+<comment :user-id="@json(Auth::id())" :post-id="{{$post->id}}" :authorized='@json(Auth::check())' :role="@if(Auth::check()) @json(Auth::user()->role === 'admin') @else @json(false) @endif" endpoint-violation="">
+    @csrf
+    @method('DELETE')
+  </comment>

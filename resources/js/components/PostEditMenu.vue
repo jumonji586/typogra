@@ -107,12 +107,12 @@ export default {
   border-radius: 50%;
   margin-left: 8px;
   transition: all 0.2s;
-  background-color: #515C63;
+  background-color: #6B7B86;
 
 }
-/* .post-edit-menu-box.active{
-  background-color: #40494f;
-} */
+.post-edit-menu-box.active{
+  background-color: #515C63;
+}
 .post-edit-menu {
   position: absolute;
   width: 150px;
