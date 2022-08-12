@@ -205,8 +205,8 @@ export default {
   overflow: hidden;
   flex-shrink: 0;
 }
-.comment-user-name {
-  font-size: 12px;
+.comment-user-name,.comment-user-name span{
+  font-size: 11px;
   /* opacity: 0.7; */
 }
 .comment-text {
