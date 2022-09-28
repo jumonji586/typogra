@@ -1,13 +1,19 @@
+<div>
+    <a href="/">TOP</a>
+    <span> > </span>
+    <span>「{{$post->theme->title}}」posted by {{$post->user->name}}</span>
+</div>
+
 <div class="post-detail">
     <div class="post-detail-img-box {{ $imgClass }} ">
         <img class="post-detail-img-box__img" src="{{ $post->image_path }}" alt="">
         <common-modal>
-            <img src="{{ $post->image_path }}" alt="">
+            <img class="post-detail-modal-img" src="{{ $post->image_path }}" alt="">
         </common-modal>
     </div>
     <div class="post-detail-data-box">
         <h2>
-            <a class="post-detail-data-box__theme" href="">Theme: {{ $post->theme->title }}</a>
+            <a class="post-detail-data-box__theme" href="">{{ $post->theme->title }}</a>
         </h2>
         <p class="post-detail-data-box__description">{{ $post->description }}</p>
         <div class="post-detail-data-box__inner">
@@ -19,7 +25,7 @@
                     {{ $post->created_at->format('Y/m/d h:m') }}
                 </p>
                 <a class="post-detail-data-box__user-name" href="">
-                    {{ $post->user->name }}
+                    {{ mb_strimwidth($post->user->name, 0, 16, '…', 'UTF-8') }}
                 </a>
             </div>
             <post-like :initial-is-liked-by='@json($post->isLikedBy(Auth::user()))'
@@ -35,6 +41,16 @@
                 @method('DELETE')
               </post-edit-menu>
         </div>
+        <div class="post-detail-btn-box">
+            <a href="" class="post-detail-btn post-detail-btn--tweet"><img class="post-detail-btn__icon" src="/img/icon/icon-twitter-white.png" alt="">
+                Tweetする</a>
+            <a href="" class="post-detail-btn post-detail-btn--follow">フォローする</a>
+        </div>
+        <a href="" class="post-detail-more-btn">
+            <span class="post-detail-more-btn__inner">
+                このテーマをもっと見る
+            </span>
+        </a>
 
     </div>
     

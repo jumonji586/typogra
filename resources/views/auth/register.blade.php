@@ -14,7 +14,7 @@
                     src="/img/icon/icon-twitter.png" alt="">Twitterで登録
             </a>
             <p class="page-type2__second-title">メールアドレスで登録</p>
-            @include('error_card_list')
+            @include('common-parts.error_card_list')
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <p class="page-type2__item-name">ユーザー名（※全角12・半角24文字以内）</p>

@@ -31,8 +31,18 @@ class AppServiceProvider extends ServiceProvider
             view()->share('rankUsers', $rankUsers);
         }
         if (Schema::hasTable('posts')) {
-            $recommendPosts = Post::where('status', '=', 'recommend')->inRandomOrder()->get()->take(4);
-            view()->share('recommendPosts', $recommendPosts);
+            $recommendPosts = Post::where('status', '=', 'recommend')->inRandomOrder()->get();
+            $recommendPosts4 = $recommendPosts->take(4);
+            $recommendPosts6 = $recommendPosts->take(6);
+            $recommendPosts8 = $recommendPosts->take(8);
+            $newPosts = Post::all()->sortByDesc('created_at')->take(8);
+
+            view()->share([
+                'recommendPosts4' => $recommendPosts4,
+                'recommendPosts6' => $recommendPosts6,
+                'recommendPosts8' => $recommendPosts8,
+                'newPosts' => $newPosts,
+            ]);
         }
     }
 }

@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
             @csrf
             <p class="page-type2__second-title">タイポグラフィ投稿</p>
-            @include('error_card_list')
+            @include('common-parts.error_card_list')
             <label for="post-img-input" class="post-img-label">
                 <img src="/img/icon/icon-camera.png" alt="">
             </label>

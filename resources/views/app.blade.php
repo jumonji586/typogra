@@ -18,9 +18,17 @@
 </style>
 <body>
   <div id="app" class="wrapperAll" v-cloak>
-    @include('header')
+    <a href="#app" class="totop-btn-box">
+      <div class="totop-btn">
+        <img class="totop-btn__img totop-btn__img--1" src="/img/arrow-dots.png" alt="">
+        <img class="totop-btn__img totop-btn__img--2" src="/img/arrow-dots.png" alt="">
+      </div>
+    </a>
+    <p class="body-side-text">#タイポグラフィ #作字　#TYPOGRAPHY</p>
+    <p class="body-side-text body-side-text--2">#タイポグラフィ #作字 #TYPOGRAPHY</p>
+    {{-- @include('common-parts.header') --}}
     @yield('content')
-    @include('footer')
+    @include('common-parts.footer')
   </div>
   <script src="/js/typogra.js"></script>
 </body>

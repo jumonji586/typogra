@@ -12,7 +12,7 @@
     <a class="sns-btn sns-btn2" href="{{ route('login.{provider}', ['provider' => 'twitter']) }}"><img src="/img/icon/icon-twitter.png" alt="">Twitterでログイン
     </a>
     <p class="page-type2__second-title">メールアドレスでログイン</p>
-    @include('error_card_list')
+    @include('common-parts.error_card_list')
     <form method="POST" action="{{ route('login') }}">
       @csrf
       <p class="page-type2__item-name">メールアドレス</p>

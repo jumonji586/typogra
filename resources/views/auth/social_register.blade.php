@@ -8,7 +8,7 @@
   <div class="page-type2__inner">
     <form method="POST" action="{{ route('register.{provider}', ['provider' => $provider]) }}">
       <p class="page-type2__second-title">ユーザー登録</p>
-      @include('error_card_list')
+      @include('common-parts.error_card_list')
       @csrf
       <p class="page-type2__item-name">※プロフィール画像はログイン後に変更できます。</p>
       <img class="form-prof-img" src="{{ $prof_image_path }}" alt="">

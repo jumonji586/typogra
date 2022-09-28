@@ -6,7 +6,7 @@
 <div class="page-type2">
   <div class="page-type2__inner">
     <p class="page-type2__second-title">パスワード再設定</p>
-    @include('error_card_list')
+    @include('common-parts.error_card_list')
     <form method="POST" action="{{ route('password.update') }}">
       @csrf
       <input type="hidden" name="email" value="{{ $email }}">

@@ -37,7 +37,6 @@ class CommentController extends Controller
         $comments = Comment::where('post_id', $request->post_id)->orderByDesc('created_at')->with("user")->get();
         // dd($comments);
         return $comments;
-        
     }
     public function deleteComment(Request $request)
     {

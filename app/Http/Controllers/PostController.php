@@ -65,7 +65,7 @@ class PostController extends Controller
         if ($aspect > 1.5) {
             $imgClass = "wide-img";
         } elseif ($aspect < 0.8) {
-            $imgClass = "heigh-img";
+            $imgClass = "high-img";
         }else{
             $imgClass = null;
         }

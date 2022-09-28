@@ -56,7 +56,7 @@ export default {
 .common-modal>*{
   vertical-align: top;
   /* width: auto; */
-  max-width: 100%;
+  /* max-width: 100%; */
   margin:auto;
   transform: scale(0.01);
   transition: transform 0.15s;

@@ -1,7 +1,5 @@
-<aside class="sub-area2">
-    <div class="user-rank-box">
-        <h2 class="side-area-title mb10">User Ranking</h2>
-        @foreach($rankUsers as $key => $rankUser)
+<div class="user-rank-box">
+    @foreach ($rankUsers as $key => $rankUser)
         <a class="user-rank-item">
             <span class="user-rank-num">{{ $key + 1 }}</span>
             <div>
@@ -9,7 +7,6 @@
             </div>
             <p class="user-rank-name">{{ mb_strimwidth($rankUser->name, 0, 12, '…', 'UTF-8') }}</p>
             <p class="user-rank-point">{{ $rankUser->likes_of_user_count }} pt</p>
-        <a/>
-        @endforeach
-    </div>
-</aside>
+        </a>
+    @endforeach
+</div>

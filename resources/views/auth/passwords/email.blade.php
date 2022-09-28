@@ -7,7 +7,7 @@
   <div class="page-type2__inner">
     <p class="page-type2__second-title">パスワード再設定</p>
     <p class="page-type2__item-name">※ご入力頂いたメールアドレスに、パスワード再設定のためのメールを送信します。</p>
-    @include('error_card_list')
+    @include('common-parts.error_card_list')
 
     @if (session('status'))
     <p class="succes-message">

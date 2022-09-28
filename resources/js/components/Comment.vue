@@ -1,5 +1,6 @@
 <template>
   <div class="comment-box">
+    
     <div class="comment-post-box">
       <textarea
         ref="comme_textarea"
@@ -10,6 +11,9 @@
       ></textarea>
       <a @click="sendComment($event)" class="comment-btn">送信</a>
     </div>
+    <p v-if="commentList === null" class="none-omment-text">
+      まだコメントはありません。
+    </p>
     <div class="comment-list">
       <div 
       v-for="comme in commentList" 
@@ -126,8 +130,18 @@ export default {
       axios
         .get("/comment/getcomment?post_id=" + this.postId)
         .then((response) => {
-          this.commentList = response.data;
-        });
+          if(response.data.length === 0){
+            this.commentList = null;
+          }else{
+            this.commentList = response.data;
+          }
+          console.log(this.commentList);
+        })
+        .catch((error) => {
+          alert("コメント読み込み時にエラーが発生しました");
+          console.log(error);
+        })
+        ;
     },
     textareaHeight(e) {
       e.target.style = "height:auto";
@@ -145,15 +159,15 @@ export default {
 .comment-box {
   padding: 17px 0px;
   margin: -14px auto;
-  margin-top: 5px;
+  margin-top: 20px;
   border: none;
   max-width: 600px;
 }
 .comment-post-box {
   display: flex;
   justify-content: space-between;
-  /* max-width: 600px; */
-  /* margin: 0 auto; */
+  max-width: 600px;
+  margin: 0 auto;
   align-items: flex-end;
 
 }
@@ -175,25 +189,32 @@ export default {
   display: none;
 }
 .comment-box textarea::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.6);
+}
+.none-omment-text{
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin-top: 40px;
 }
 .comment-list {
-  margin-top: 25px;
+  margin-top: 35px;
 }
 .comment-item {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
   padding: 10px 0;
 }
 .comment-item-inner {
   display: flex;
   align-items: center;
+  /* align-items: flex-start; */
   margin-bottom: 5px;
 }
 .comment-item:first-of-type {
   margin-top: 8px;
 }
 .comment-item:last-of-type {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   margin-bottom: 40px;
 }
 .comment-user-img {

@@ -218,7 +218,7 @@ export default {
 <!--<style>-->
 <style scoped>
 .subcomment-item {
-  border-top: 1px solid #c0c0c0;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
   padding: 10px 0 10px 50px;
 }
 .subcomment-item-inner {
