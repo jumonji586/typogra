@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,16 +37,9 @@ Route::post('comment/sendsubcomment', [CommentController::class, 'sendSubComment
 Route::get('comment/getsubcomment', [CommentController::class, 'getSubComment'])->name('comment.getSubComment');
 Route::delete('comment/deletesubcomment', [CommentController::class, 'deleteSubComment'])->name('comment.deleteSubComment');
 
+// users
+Route::get('users/detail/{display_id}', [UserController::class, 'Myshow'])->name('users.show');
 
-
-// Route::prefix('comment')->name('comment.')->group(function () {
-//     Route::post('/sendcomment', 'CommentController@sendComment')->name('sendComment');
-//     Route::get('/getcomment', 'CommentController@getComment')->name('getComment');
-//     Route::delete('/deletecomment', 'CommentController@deleteComment')->name    ('deleteComment');
-//     Route::post('/sendsubcomment', 'CommentController@sendSubComment')->name    ('sendSubComment');
-//     Route::get('/getsubcomment', 'CommentController@getSubComment')->name   ('getSubComment');
-//     Route::delete('/deletesubcomment', 'CommentController@deleteSubComment')->name('deleteSubComment');
-// });
 
 // Auth
 Route::prefix('login')->name('login.')->group(function () {

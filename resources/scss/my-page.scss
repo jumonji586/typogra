@@ -1,0 +1,66 @@
+.profile{
+    background-color: rgba(0, 0, 0, 0.13);
+    padding: 20px;
+    margin-top: 5px;
+}
+.profile__inner{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.profile-data-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3.5%;
+    width: 40%;
+}
+.profile-img-box{
+    width: 60%;
+}
+.profile-img-box__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-user-icon{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 60px;
+}
+.profile-user-name{
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 5px;
+    
+}
+.profile-user-text{
+    // margin-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    padding-top: 5px;
+}
+.profile-follow-number-box{
+    margin-top: 15px;
+}
+.profile-follow-number{
+    margin: 0 5px;
+    color: #d3d3d3;
+    // text-decoration: underline;
+}
+.profile-btn-box{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    // flex-direction: column;
+}
+.profile-btn-box__btn{
+    background-color:#DFE2E4;
+    margin: 10px 5px 0px;
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: #000;
+}

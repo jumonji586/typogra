@@ -9,7 +9,7 @@
     @endguest
 
     @auth
-        <a class="upper-nav1-icon" href=''>
+        <a class="upper-nav1-icon" href='{{ route("users.show", ["display_id" => Auth::user()->display_id]) }}'>
             <img class="upper-nav1-icon__img" src="{{ Auth::user()->prof_image_path }}" alt="">
             <p class="upper-nav1-icon__text">MY PAGE</p>
         </a>

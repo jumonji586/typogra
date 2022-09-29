@@ -17,14 +17,14 @@
         </h2>
         <p class="post-detail-data-box__description">{{ $post->description }}</p>
         <div class="post-detail-data-box__inner">
-            <a href="">
+            <a href="{{ route("users.show", ["display_id" => $post->user->display_id]) }}">
                 <img class="post-detail-data-box__user-icon" src="{{ $post->user->prof_image_path }}" alt="">
             </a>
             <div class="post-detail-data-box__text">
                 <p class="post-detail-data-box__date">
                     {{ $post->created_at->format('Y/m/d h:m') }}
                 </p>
-                <a class="post-detail-data-box__user-name" href="">
+                <a class="post-detail-data-box__user-name" href="{{ route("users.show", ["display_id" => $post->user->display_id]) }}">
                     {{ mb_strimwidth($post->user->name, 0, 16, '…', 'UTF-8') }}
                 </a>
             </div>

@@ -14,7 +14,7 @@
             <span class="post-item-data-box__date">
                 {{ $post->created_at->format('Y/m/d') }}
             </span>
-            <a class="post-item-data-box__user-name" href="">
+            <a class="post-item-data-box__user-name" href="{{ route("users.show", ["display_id" => $post->user->display_id]) }}">
                 {{ mb_strimwidth($post->user->name, 0, 12, '…', 'UTF-8') }}
             </a>
         </p>
