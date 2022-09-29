@@ -36,13 +36,13 @@
             <p class="side-menu-item__sub-text">マイページ</p>
         </div>
     </a>
-    <a class="side-menu-item" href="">
+    <a class="side-menu-item" href="{{ route('posts.theme.{theme}', ['theme' => 'all']) }}">
         <div class="side-menu-item__inner">
             <p class="side-menu-item__main-text">ALL</p>
             <p class="side-menu-item__sub-text">全ての投稿</p>
         </div>
     </a>
-    <a class="side-menu-item" href="">
+    <a class="side-menu-item" href="{{ route('posts.theme.{theme}', ['theme' => 'recommend']) }}">
         <div class="side-menu-item__inner">
             <p class="side-menu-item__main-text">RECOMMEND</p>
             <p class="side-menu-item__sub-text">おすすめの投稿</p>

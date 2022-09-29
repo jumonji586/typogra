@@ -41,7 +41,7 @@
                             <p class="post-list-btn-box__sub-text">このテーマに投稿する</p>
                         </div>
                     </a>
-                    <a class="post-list-btn-box__btn" href="">
+                    <a class="post-list-btn-box__btn" href="{{ route('posts.theme.{theme}', ['theme' => $key]) }}">
                         <div class="post-list-btn-box__btn-inner">
                             <p class="post-list-btn-box__main-text">MORE</p>
                             <p class="post-list-btn-box__sub-text">このテーマをもっと見る</p>

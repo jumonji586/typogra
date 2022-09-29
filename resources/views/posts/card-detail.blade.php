@@ -46,7 +46,7 @@
                 Tweetする</a>
             <a href="" class="post-detail-btn post-detail-btn--follow">フォローする</a>
         </div>
-        <a href="" class="post-detail-more-btn">
+        <a href="{{ route('posts.theme.{theme}', ['theme' => $post->theme_id ]) }}" class="post-detail-more-btn">
             <span class="post-detail-more-btn__inner">
                 このテーマをもっと見る
             </span>

@@ -28,6 +28,7 @@ Route::put('posts/{post}/like',  [PostController::class, 'like'])->name('posts.l
 Route::delete('posts/{post}/like', [PostController::class, 'unlike'])->name('posts.unlike')->middleware('auth');
 Route::put('posts/{post}/recommendset',  [PostController::class, 'recommendOn'])->name('posts.recommendOn')->middleware('auth');
 Route::delete('posts/{post}/recommendset',  [PostController::class, 'recommendOff'])->name('posts.recommendOff')->middleware('auth');
+Route::get('posts/theme/{theme}', [PostController::class, 'theme'])->name('posts.theme.{theme}');
 
 // comment
 Route::post('comment/sendcomment', [CommentController::class, 'sendComment'])->name('comment.sendComment');

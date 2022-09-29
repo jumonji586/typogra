@@ -26,6 +26,34 @@ class PostController extends Controller
             'themes' => $themes,
         ]);
     }
+    public function theme($theme){
+
+        $subRecommendPosts = null;
+        $secondTitle = null;
+
+        if($theme === 'all'){
+            $posts = Post::all()->sortByDesc('created_at');
+            $firstTitle = '全ての投稿';
+        }elseif($theme === 'recommend'){
+            $posts = Post::where('status', '=' , 'recommend')->orderByDesc('created_at')->get();
+            $firstTitle = 'Recommend';
+        }else{
+            $posts = Post::where('theme_id', '=' , $theme)->orderByDesc('created_at')->get();
+            $subRecommendPosts = Post::where('theme_id', '!=' , $theme)->where('status', '=' , 'recommend')->orderByDesc('created_at')->get();
+            $themeTitle = Theme::find($theme)->title;
+            $firstTitle = '「'.$themeTitle.'」の投稿一覧';
+            $secondTitle = "Recommend";
+        }
+        
+        return view('posts.theme', [
+            'theme' => $theme,
+            'posts' => $posts,
+            'subRecommendPosts' => $subRecommendPosts,
+            'firstTitle' => $firstTitle,
+            'secondTitle' => $secondTitle,
+        ]);
+    }
+
     public function create(?int $theme_id = null)
     {
         $themes = Theme::all();
