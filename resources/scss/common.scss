@@ -293,7 +293,7 @@ body {
     // align-items: flex-end;
     border-left: 3px solid #fff;
     flex-direction: column;
-    background: linear-gradient(315deg,rgba(255, 255, 255, 0.4) 14px,transparent 14px);
+    background: linear-gradient(315deg,rgba(255, 255, 255, 0.4) 10px,transparent 10px, transparent 12px,rgba(255, 255, 255, 0.4) 12px,rgba(255, 255, 255, 0.4) 14px, transparent 14px);
 }
 .side-menu-item__main-text{
     font-family: SenobiGothic;

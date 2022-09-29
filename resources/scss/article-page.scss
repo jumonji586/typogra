@@ -126,7 +126,7 @@
     // align-items: flex-end;
     flex-direction: column;
     border-left: 4px solid #fff;
-    background: linear-gradient(315deg,rgba(255, 255, 255, 0.4) 17px,transparent 17px);
+    background: linear-gradient(315deg,rgba(255, 255, 255, 0.4) 13px,transparent 13px, transparent 15px,rgba(255, 255, 255, 0.4) 15px,rgba(255, 255, 255, 0.4) 17px, transparent 17px);
 }
 .post-list-btn-box__main-text{
     font-family: SenobiGothic;
@@ -267,7 +267,7 @@
 }
 .post-detail-more-btn__inner{
     display:block;
-    background: linear-gradient(315deg,rgba(255, 255, 255, 0.4) 10px,transparent 10px);
+    background: linear-gradient(315deg,rgba(255, 255, 255, 0.4) 8px,transparent 8px, transparent 9px,rgba(255, 255, 255, 0.4) 9px,rgba(255, 255, 255, 0.4) 10px, transparent 10px);
 }
 
 // list=============================================
