@@ -6,6 +6,7 @@ import CommonModal from './components/CommonModal.vue'
 import PostEditMenu from './components/PostEditMenu.vue'
 import Comment from './components/Comment.vue'
 import SubComment from './components/SubComment.vue'
+import Cropper from './components/Cropper.vue'
 
 const app = new Vue({
     el: '#app',
@@ -16,5 +17,6 @@ const app = new Vue({
       PostEditMenu,
       Comment,
       SubComment,
+      Cropper,
     }
   })

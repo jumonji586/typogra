@@ -35,7 +35,7 @@
                             <a class="profile-btn-box__btn" href="">フォロー済</a>
                             @endif
                             @if( Auth::id() === $user->id )
-                            <a class="profile-btn-box__btn" href="">プロフ・設定変更</a>
+                            <a class="profile-btn-box__btn" href="{{ route('users.edit') }}">プロフ・設定変更</a>
                             @endif
                         </div>
                     </div>

@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="page-type2">
-    <h2 class="page-type2__title">POST</h2>
+    @include('common-parts.header-logo')
     <div class="page-type2__inner mt30">
         <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
             @csrf

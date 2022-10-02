@@ -6,9 +6,9 @@
     top:0;
     left: 0;
     background-position: 0 -30px;
-    min-height: calc(100vh - 134px);
+    min-height: calc(100vh - 100px);
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -33,7 +33,7 @@
     background-color: rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 50%;
-    margin: 0 auto;
+    margin: 35px auto 0 auto; 
     padding:45px 60px 60px;
 }
 .page-type2__input,
@@ -79,7 +79,7 @@
 }
 .page-type2__cancel-btn,
 .page-type2__enter-btn{
-    width: 47%;
+    width: 48%;
     border: none;
     display: flex;
     justify-content: center;
@@ -96,12 +96,12 @@
 }
 .profedit-img-box{
     position: relative;
-    width: 150px;
+    width: 100px;
     border-radius: 50%;
-    height: 150px;
+    height: 100px;
     overflow: hidden;
     margin:30px auto 0 auto;
-    background-color: #fff;
+    // background-color: #fff;
 }
 .profedit-img-box2{
     width: 50%;
