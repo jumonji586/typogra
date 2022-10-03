@@ -90,4 +90,29 @@ class UserController extends Controller
 
         return ['name' => $user->name];
     }
+    public function followings(string $display_id)
+    {
+        $user = User::where('display_id', $display_id)->first();
+
+        $followings = $user->followings()->with('followers')->orderByDesc('created_at')->paginate(30);
+        // このfollowingsはユーザーモデルに定義されているリレーションメソッド
+        // 下のfollowersとかも同様
+
+        return view('users.follow-list', [
+            'user' => $user,
+            'followList' => $followings,
+            'followPageFlag' => 'followings',
+        ]);
+    }
+
+    public function followers(string $display_id)
+    {
+        $user = User::where('display_id', $display_id)->first();
+        $followers = $user->followers()->with('followers')->orderByDesc('created_at')->paginate(30);
+        return view('users.follow-list', [
+            'user' => $user,
+            'followList' => $followers,
+            'followPageFlag' => 'followers',
+        ]);
+    }
 }

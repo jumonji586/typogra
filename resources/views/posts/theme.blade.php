@@ -16,7 +16,7 @@
             @forelse($posts as $post)
                 @include('posts.card')
                 @empty
-                <p class="post-empty-message">まだ投稿はありません。</p>
+                <p class="common-empty-message">まだ投稿はありません。</p>
             @endforelse
             </div>
             @if($theme !== 'all' && $theme !== 'recommend')

@@ -32,7 +32,7 @@
                     @endif
                 </div>
                 @if(count($posts) === 0)
-                    <p class="post-empty-message">まだ投稿はありません。</p>
+                    <p class="common-empty-message">まだ投稿はありません。</p>
                 @endif
                 <div class="post-list-btn-box mt30 mb70">
                     <a class="post-list-btn-box__btn" href="{{ route('posts.create.{theme_id}', ['theme_id' => $key]) }}">

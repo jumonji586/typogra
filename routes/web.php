@@ -44,7 +44,8 @@ Route::get('users/edit',  [UserController::class, 'Myedit'])->name('users.edit')
 Route::patch('users/{user}', [UserController::class, 'update'])->name('users.update');
 Route::put('users/{user}/follow', [UserController::class, 'follow'])->name('users.follow');
 Route::delete('users/{user}/follow', [UserController::class, 'unfollow'])->name('users.unfollow');
-
+Route::get('/{display_id}/followings', [UserController::class, 'followings'])->name('users.followings');
+Route::get('/{display_id}/followers', [UserController::class, 'followers'])->name('users.followers');
 
 // Auth
 Route::prefix('login')->name('login.')->group(function () {
