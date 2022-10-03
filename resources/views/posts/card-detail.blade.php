@@ -42,9 +42,12 @@
               </post-edit-menu>
         </div>
         <div class="post-detail-btn-box">
-            <a href="" class="post-detail-btn post-detail-btn--tweet"><img class="post-detail-btn__icon" src="/img/icon/icon-twitter-white.png" alt="">
+            <a href="" class="common-btn1 common-btn1--tweet"><img class="common-btn1__icon" src="/img/icon/icon-twitter-white.png" alt="">
                 Tweetする</a>
-            <a href="" class="post-detail-btn post-detail-btn--follow">フォローする</a>
+            @if( Auth::id() !== $post->user->id )
+            <follow-button :initial-is-followed-by='@json($post->user->isFollowedBy(Auth::user()))' :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['user' => $post->user]) }}">
+            </follow-button>
+            @endif
         </div>
         <a href="{{ route('posts.theme.{theme}', ['theme' => $post->theme_id ]) }}" class="post-detail-more-btn">
             <span class="post-detail-more-btn__inner">

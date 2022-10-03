@@ -7,6 +7,7 @@ import PostEditMenu from './components/PostEditMenu.vue'
 import Comment from './components/Comment.vue'
 import SubComment from './components/SubComment.vue'
 import Cropper from './components/Cropper.vue'
+import FollowButton from './components/FollowButton.vue'
 
 const app = new Vue({
     el: '#app',
@@ -18,5 +19,6 @@ const app = new Vue({
       Comment,
       SubComment,
       Cropper,
+      FollowButton,
     }
   })

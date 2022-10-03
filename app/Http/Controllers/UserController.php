@@ -66,4 +66,28 @@ class UserController extends Controller
 
         return redirect()->route('users.show', ['display_id' => $user->display_id]);
     }
+    public function follow(Request $request, User $user)
+    {
+
+        if ($user->id === $request->user()->id) {
+            return abort('404', 'Cannot follow yourself.');
+        }
+        // else{
+        //     $user->notify(new InformationNotification(null,$request->user(),"follow" ,null));
+        // }
+
+        $request->user()->followings()->detach($user);
+        $request->user()->followings()->attach($user);
+
+        return ['name' => $user->name];
+    }
+    public function unfollow(Request $request, User $user)
+    {
+        if ($user->id === $request->user()->id) {
+            return abort('404', 'Cannot follow yourself.');
+        }
+        $request->user()->followings()->detach($user);
+
+        return ['name' => $user->name];
+    }
 }

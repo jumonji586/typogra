@@ -152,6 +152,23 @@ body {
     font-weight: 100;
     margin-top: 30px;
 }
+// btn-------------------------------------------------------
+
+.common-btn1{
+    border-radius: 20px;
+    display: inline-block;
+    padding: 5px 15px;
+    margin-right: 5px;
+    background-color: #DFE2E4;
+    color: #000;
+}
+.common-btn1__icon{
+    height: 17px;
+}
+.common-btn1--tweet{
+    background-color: #1DA1F2;
+    color: #fff;
+}
 
 // sub-area------------------------------------------------
 .sub-area-inner{

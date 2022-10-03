@@ -42,6 +42,8 @@ Route::delete('comment/deletesubcomment', [CommentController::class, 'deleteSubC
 Route::get('users/detail/{display_id}', [UserController::class, 'Myshow'])->name('users.show');
 Route::get('users/edit',  [UserController::class, 'Myedit'])->name('users.edit');
 Route::patch('users/{user}', [UserController::class, 'update'])->name('users.update');
+Route::put('users/{user}/follow', [UserController::class, 'follow'])->name('users.follow');
+Route::delete('users/{user}/follow', [UserController::class, 'unfollow'])->name('users.unfollow');
 
 
 // Auth
