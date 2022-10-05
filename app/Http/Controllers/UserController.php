@@ -115,4 +115,20 @@ class UserController extends Controller
             'followPageFlag' => 'followers',
         ]);
     }
+    public function leave(string $display_id)
+    {
+        $user = User::where('display_id', $display_id)->first();
+        $this->authorize('leave', $user);
+        return view('users.leave', [
+            'user' => $user,
+        ]);
+    }
+    public function destroy(User $user,Request $request)
+    {
+        $request->validate([
+            'delete_accept' => ['accepted'],
+        ]);
+        $user->delete();
+        return redirect('/')->with('message', 'アカウントを削除しました');
+    }
 }

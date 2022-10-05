@@ -46,6 +46,9 @@ Route::put('users/{user}/follow', [UserController::class, 'follow'])->name('user
 Route::delete('users/{user}/follow', [UserController::class, 'unfollow'])->name('users.unfollow');
 Route::get('/{display_id}/followings', [UserController::class, 'followings'])->name('users.followings');
 Route::get('/{display_id}/followers', [UserController::class, 'followers'])->name('users.followers');
+Route::get('users/leave/{display_id}', [UserController::class, 'leave'])->name('users.leave');
+Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
 
 // Auth
 Route::prefix('login')->name('login.')->group(function () {
