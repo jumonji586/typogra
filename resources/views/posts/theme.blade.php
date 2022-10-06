@@ -20,7 +20,7 @@
             @endforelse
             </div>
             @if($theme !== 'all' && $theme !== 'recommend')
-                <h2 class="theme-name mt40">{{ $secondTitle }}</h2>
+                <h2 class="theme-name mt20">{{ $secondTitle }}</h2>
                 <div class="post-box2 mt10 mb50">
                 @foreach($subRecommendPosts as $post)
                     @include('posts.card')
