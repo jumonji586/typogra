@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="page-type2">
-<h2 class="page-type2__title">LOGIN</h2>
+  @include('common-parts.header-logo')
   <div class="page-type2__inner mt30">
     <p class="page-type2__second-title">SNSアカウントでログイン</p>
     <a class="sns-btn" href="{{ route('login.{provider}', ['provider' => 'google']) }}" class=""><img src="/img/icon/icon-google.png" alt="">Googleでログイン

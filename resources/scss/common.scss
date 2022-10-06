@@ -166,7 +166,25 @@ body {
     height: 130px;
     padding-top: 50px;
     align-items: flex-start;
-    // justify-content: center;
+}
+
+.upper-nav1-text-btn{
+    display: flex;
+    align-items: center;
+    border: double 4px #6B7B86;
+    font-size: 14px;
+    font-weight: 100;
+    font-family: SenobiGothic;
+    line-height: 0;
+    padding: 6px 12px;
+    margin-right: 10px;
+    color: #606E78;
+    background-color: #fff;
+    letter-spacing: -0.2em;
+}
+.upper-nav1-text-btn__img{
+    height: 17px;
+    margin-right: 4px;
 }
 .upper-nav1-icon{
     margin-right: 10px;

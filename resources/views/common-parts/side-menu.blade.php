@@ -1,10 +1,12 @@
 <div class="upper-nav1">
     @guest
-        <a href="{{ route('register') }}">
-            <img class="icon" src="/img/icon/icon-register.png">ユーザー登録
+        <a class="upper-nav1-text-btn" href="{{ route('register') }}">
+            <img class="upper-nav1-text-btn__img" src="/img/icon/icon-register-gray.png">
+            新規登録
         </a>
-        <a href="{{ route('login') }}">
-            <img class="icon" src="/img/icon/icon-login-black.png">ログイン
+        <a class="upper-nav1-text-btn" href="{{ route('login') }}">
+            <img class="upper-nav1-text-btn__img" src="/img/icon/icon-login-gray.png">
+            ログイン
         </a>
     @endguest
 
