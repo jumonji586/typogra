@@ -6,6 +6,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,8 +62,9 @@ Route::prefix('register')->name('register.')->group(function () {
     Route::post('/{provider}',  [RegisterController::class, 'registerProviderUser'])->name('{provider}');
 });
 
-
-
+// Contact
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('contact',  [ContactController::class, 'complete'])->name('contact.complete');
 
 
 // Route::prefix('posts')->name('posts.')->group(function () {

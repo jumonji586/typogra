@@ -82,7 +82,7 @@
     
     <a class="side-menu-sub-item mt20" href="">利用規約</a>
     <a class="side-menu-sub-item" href="">プライバシーポリシー</a>
-    <a class="side-menu-sub-item" href="">お問い合わせ</a>
+    <a class="side-menu-sub-item" href="{{ route('contact.index') }}">お問い合わせ</a>
     @auth
     <a class="side-menu-sub-item" href="{{ route('users.leave',['display_id' => Auth::user()->display_id]) }}">アカウント削除</a>
     @endauth
