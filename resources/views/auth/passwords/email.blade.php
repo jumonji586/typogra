@@ -4,7 +4,8 @@
 
 @section('content')
 <div class="page-type2">
-  <div class="page-type2__inner">
+  @include('common-parts.header-logo')
+  <div class="page-type2__inner mt30">
     <p class="page-type2__second-title">パスワード再設定</p>
     <p class="page-type2__item-name">※ご入力頂いたメールアドレスに、パスワード再設定のためのメールを送信します。</p>
     @include('common-parts.error_card_list')
@@ -18,10 +19,10 @@
       @csrf
       <p class="page-type2__item-name">メールアドレス</p>
       @guest
-      <input class="form-control" type="text" id="email" name="email">
+      <input class="page-type2__input" type="text" id="email" name="email">
       @endguest
       @auth
-      <input class="form-control" type="text" id="email" name="email" value="{{Auth::user()->email}}">
+      <input class="page-type2__input"" type="text" id="email" name="email" value="{{Auth::user()->email}}">
       @endauth
       <div class="page-type2_btn-box">
         <a class="page-type2__cancel-btn" href="/">キャンセル</a>
