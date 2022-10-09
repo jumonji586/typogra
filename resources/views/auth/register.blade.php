@@ -6,14 +6,14 @@
     <div class="page-type2">
         @include('common-parts.header-logo')
         <div class="page-type2__inner mt30">
-            <p class="page-type2__second-title">SNSアカウントで登録</p>
+            <p class="page-type2__title">SNSアカウントで登録</p>
             <a class="sns-btn" href="{{ route('login.{provider}', ['provider' => 'google']) }}" class=""><img
                     src="/img/icon/icon-google.png" alt="">Googleで登録
             </a>
             <a class="sns-btn sns-btn2" href="{{ route('login.{provider}', ['provider' => 'twitter']) }}"><img
                     src="/img/icon/icon-twitter.png" alt="">Twitterで登録
             </a>
-            <p class="page-type2__second-title">メールアドレスで登録</p>
+            <p class="page-type2__title">メールアドレスで登録</p>
             @include('common-parts.error_card_list')
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -25,9 +25,9 @@
                 <input class="page-type2__input" type="password" id="password" name="password">
                 <p class="page-type2__item-name">パスワード再入力</p>
                 <input class="page-type2__input" type="password" id="password_confirmation" name="password_confirmation">
-                <div class="page-type2__item-name rule-privacy-box">
+                <div class="page-type2__item-name page-type2__rule-privacy-box">
                     <input class="page-type2__checkbox" type="checkbox" name="rule-privacy">
-                    <p><a href="" class="fw-b underline" target="_blank">利用規約</a> および <a href=""
+                    <p><a href="{{ route('rule') }}" class="fw-b underline" target="_blank">利用規約</a> および <a href="{{ route('privacy-policy') }}"
                             class="fw-b underline" target="_blank">プライバシーポリシー</a> に同意する</p>
                 </div>
                 <div class="page-type2_btn-box">

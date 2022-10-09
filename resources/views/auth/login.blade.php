@@ -6,12 +6,12 @@
 <div class="page-type2">
   @include('common-parts.header-logo')
   <div class="page-type2__inner mt30">
-    <p class="page-type2__second-title">SNSアカウントでログイン</p>
+    <p class="page-type2__title">SNSアカウントでログイン</p>
     <a class="sns-btn" href="{{ route('login.{provider}', ['provider' => 'google']) }}" class=""><img src="/img/icon/icon-google.png" alt="">Googleでログイン
     </a>
     <a class="sns-btn sns-btn2" href="{{ route('login.{provider}', ['provider' => 'twitter']) }}"><img src="/img/icon/icon-twitter.png" alt="">Twitterでログイン
     </a>
-    <p class="page-type2__second-title">メールアドレスでログイン</p>
+    <p class="page-type2__title">メールアドレスでログイン</p>
     @include('common-parts.error_card_list')
     <form method="POST" action="{{ route('login') }}">
       @csrf

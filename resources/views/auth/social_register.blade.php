@@ -7,7 +7,7 @@
   @include('common-parts.header-logo')
   <div class="page-type2__inner mt30">
     <form method="POST" action="{{ route('register.{provider}', ['provider' => $provider]) }}">
-      <p class="page-type2__second-title">ユーザー登録</p>
+      <p class="page-type2__title">ユーザー登録</p>
       @include('common-parts.error_card_list')
       @csrf
       <p class="page-type2__item-name">※プロフィール画像はログイン後に変更できます。</p>
@@ -21,9 +21,9 @@
       <p class="page-type2__item-name">メールアドレス</p>
       <input class="page-type2__input" type="text" id="email" name="email" value="{{ $email }}">
       <p><br>※入力した内容は当サイトのみに反映されます。各SNSアカウントの登録情報には影響しません。</p>
-      <div class="page-type2__item-name rule-privacy-box">
+      <div class="page-type2__item-name page-type2__rule-privacy-box">
         <input class="page-type2__checkbox" type="checkbox" name="rule-privacy">
-        <p><a href="" class="fw-b underline" target="_blank">利用規約</a> および <a href="" class="fw-b underline" target="_blank">プライバシーポリシー</a> に同意する</p>
+        <p><a href="{{ route('rule') }}" class="fw-b underline" target="_blank">利用規約</a> および <a href="{{ route('privacy-policy') }}" class="fw-b underline" target="_blank">プライバシーポリシー</a> に同意する</p>
       </div>
       <div class="page-type2_btn-box">
         <a href="/" class="page-type2__cancel-btn">キャンセル</a>

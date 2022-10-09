@@ -6,7 +6,7 @@
 <div class="page-type2">
   @include('common-parts.header-logo')
   <div class="page-type2__inner mt30">
-    <p class="page-type2__second-title">パスワード再設定</p>
+    <p class="page-type2__title">パスワード再設定</p>
     <p class="page-type2__item-name">※ご入力頂いたメールアドレスに、パスワード再設定のためのメールを送信します。</p>
     @include('common-parts.error_card_list')
 

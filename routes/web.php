@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use Illuminate\Auth\Events\OtherDeviceLogout;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,13 @@ Route::prefix('register')->name('register.')->group(function () {
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('contact',  [ContactController::class, 'complete'])->name('contact.complete');
 
+// Other
+Route::get('/rule', function () {
+    return view('rule');
+})->name('rule');
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy-policy');
 
 // Route::prefix('posts')->name('posts.')->group(function () {
 //     Route::get('/index', [PostController::class, 'index'])->name('index');
