@@ -35,7 +35,7 @@
             <post-edit-menu 
             endpoint-delete="{{ route('posts.destroy', ['post' => $post]) }}" 
             endpoint-recommend="{{ route('posts.recommendOn', ['post' => $post]) }}" 
-            endpoint-violation="" 
+            endpoint-violation="{{ route('posts.violation', ['post' => $post]) }}" 
             btntype="illust" :role="@if(Auth::check()) @json(Auth::user()->role === 'admin') @else @json(false) @endif" :userflag="@json(Auth::id() === $post->user_id)" :initial-recommendflag="@json($post->status === 'recommend')">
                 @csrf
                 @method('DELETE')
@@ -58,7 +58,7 @@
     </div>
     
 </div>
-<comment :user-id="@json(Auth::id())" :post-id="{{$post->id}}" :authorized='@json(Auth::check())' :role="@if(Auth::check()) @json(Auth::user()->role === 'admin') @else @json(false) @endif" endpoint-violation="">
+<comment :user-id="@json(Auth::id())" :post-id="{{$post->id}}" :authorized='@json(Auth::check())' :role="@if(Auth::check()) @json(Auth::user()->role === 'admin') @else @json(false) @endif" endpoint-violation="{{ route('posts.violation', ['post' => $post]) }}">
     @csrf
     @method('DELETE')
   </comment>

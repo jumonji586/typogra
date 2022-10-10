@@ -143,4 +143,14 @@ class PostController extends Controller
         $post->status = null;
         $post->save();
     }
+    public function violation(Request $request)
+    {
+        $targetInfo = isset($request->message)
+            ? "違反報告対象URL : " . $request->headers->get("referer") . "\n対象コメント : " . $request->message . "\n"
+            : "違反報告対象URL : " . $request->headers->get("referer") . "\n";
+
+        return view('contact.index', [
+            'targetInfo' => $targetInfo,
+        ]);
+    }
 }

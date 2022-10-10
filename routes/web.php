@@ -32,6 +32,8 @@ Route::delete('posts/{post}/like', [PostController::class, 'unlike'])->name('pos
 Route::put('posts/{post}/recommendset',  [PostController::class, 'recommendOn'])->name('posts.recommendOn')->middleware('auth');
 Route::delete('posts/{post}/recommendset',  [PostController::class, 'recommendOff'])->name('posts.recommendOff')->middleware('auth');
 Route::get('posts/theme/{theme}', [PostController::class, 'theme'])->name('posts.theme.{theme}');
+Route::get('posts/{post}/violation', [PostController::class, 'violation'])->name('posts.violation');
+
 
 // comment
 Route::post('comment/sendcomment', [CommentController::class, 'sendComment'])->name('comment.sendComment');
