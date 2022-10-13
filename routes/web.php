@@ -53,7 +53,7 @@ Route::get('/{display_id}/followings', [UserController::class, 'followings'])->n
 Route::get('/{display_id}/followers', [UserController::class, 'followers'])->name('users.followers');
 Route::get('users/leave/{display_id}', [UserController::class, 'leave'])->name('users.leave');
 Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-
+Route::get('users/info',  [UserController::class, 'info'])->name('users.info')->middleware('auth');
 
 // Auth
 Route::prefix('login')->name('login.')->group(function () {

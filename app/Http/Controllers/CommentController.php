@@ -6,8 +6,8 @@ use App\Models\Post;
 use App\Models\Comment;
 use App\Models\SubComment;
 use App\Models\User;
-
 use Illuminate\Http\Request;
+use App\Notifications\InformationNotification;
 
 class CommentController extends Controller
 {
@@ -26,11 +26,11 @@ class CommentController extends Controller
 
 
         $post = Post::find($request->post_id);
-        // if ($request->user()->id !== $post->user->id) {
+        if ($request->user()->id !== $post->user->id) {
 
-        //     $fromUser = User::find($request->user()->id);
-        //     $post->user->notify(new InformationNotification($post, $fromUser, "comment", null));
-        // }
+            $fromUser = User::find($request->user()->id);
+            $post->user->notify(new InformationNotification($post, $fromUser, "comment", null));
+        }
     }
     public function getComment(Request $request)
     {
@@ -57,24 +57,24 @@ class CommentController extends Controller
         $subcomment->to_user_name = $request->to_user_name;
         $subcomment->save();
 
-        // if ($request->type === "a-type") {
-        //     $comment = Comment::find($request->comment_id);
-        //     $post = $comment->post;
-        //     if ($request->user()->id !== $comment->user->id) {
-        //         $to_comment_text = mb_strimwidth($comment->comment, 0, 60, '…', 'UTF-8');
-        //         $fromUser = User::find($request->user()->id);
-        //         $comment->user->notify(new InformationNotification($post, $fromUser, "reply-a", $to_comment_text));
-        //     }
-        // } elseif ($request->type === "b-type") {
-        //     $comment = Comment::find($request->comment_id);
-        //     $post = $comment->post;
-        //     $to_subcomment = SubComment::find($request->to_subcomment_id);
-        //     if ($request->user()->id !== $to_subcomment->user->id) {
-        //         $to_comment_text = mb_strimwidth($to_subcomment->sub_comment, 0, 60, '…', 'UTF-8');
-        //         $fromUser = User::find($request->user()->id);
-        //         $to_subcomment->user->notify(new InformationNotification($post, $fromUser, "reply-b", $to_comment_text));
-        //     }
-        // }
+        if ($request->type === "a-type") {
+            $comment = Comment::find($request->comment_id);
+            $post = $comment->post;
+            if ($request->user()->id !== $comment->user->id) {
+                $to_comment_text = mb_strimwidth($comment->comment, 0, 60, '…', 'UTF-8');
+                $fromUser = User::find($request->user()->id);
+                $comment->user->notify(new InformationNotification($post, $fromUser, "reply-a", $to_comment_text));
+            }
+        } elseif ($request->type === "b-type") {
+            $comment = Comment::find($request->comment_id);
+            $post = $comment->post;
+            $to_subcomment = SubComment::find($request->to_subcomment_id);
+            if ($request->user()->id !== $to_subcomment->user->id) {
+                $to_comment_text = mb_strimwidth($to_subcomment->sub_comment, 0, 60, '…', 'UTF-8');
+                $fromUser = User::find($request->user()->id);
+                $to_subcomment->user->notify(new InformationNotification($post, $fromUser, "reply-b", $to_comment_text));
+            }
+        }
     } 
 
     public function getSubComment(Request $request)

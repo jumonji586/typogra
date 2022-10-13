@@ -15,7 +15,16 @@
             <img class="upper-nav1-icon__img" src="{{ Auth::user()->prof_image_path }}" alt="">
             <p class="upper-nav1-icon__text">MY PAGE</p>
         </a>
-        <a class="upper-nav1-icon" href="">
+        <a class="upper-nav1-icon" href="{{ route('users.info') }}">
+            @if(Auth::user()->unreadNotifications->count() > 0)
+            <span class="upper-nav1-icon__info-count">
+            @if(Auth::user()->unreadNotifications->count() > 999)
+                999
+            @else
+                {{Auth::user()->unreadNotifications->count()}}
+            @endif
+            </span>
+            @endif
             <img class="upper-nav1-icon__img" src="/img/icon/icon-info.png" alt="">
             <p class="upper-nav1-icon__text">INFO</p>
         </a>

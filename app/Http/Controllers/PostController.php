@@ -6,6 +6,7 @@ use App\Models\Theme;
 use App\Http\Requests\PostRequest;
 use Faker\Core\Number;
 use Illuminate\Http\Request;
+use App\Notifications\InformationNotification;
 
 class PostController extends Controller
 {
@@ -110,6 +111,10 @@ class PostController extends Controller
         // $request->user()はRequestクラスのメソッド。
         // リクエストを送ったユーザーが取得できる
 
+        if ($request->user()->id !== $post->user->id) {
+
+            $post->user->notify(new InformationNotification($post, $request->user(), "like", null));
+        }
         return [
             'id' => $post->id,
             'countLikes' => $post->count_likes,

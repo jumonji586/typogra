@@ -7,6 +7,7 @@ use App\Rules\textMaxWidth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Image; //intervention/imageライブラリの読み込み
+use App\Notifications\InformationNotification;
 
 class UserController extends Controller
 {
@@ -72,9 +73,9 @@ class UserController extends Controller
         if ($user->id === $request->user()->id) {
             return abort('404', 'Cannot follow yourself.');
         }
-        // else{
-        //     $user->notify(new InformationNotification(null,$request->user(),"follow" ,null));
-        // }
+        else{
+            $user->notify(new InformationNotification(null,$request->user(),"follow" ,null));
+        }
 
         $request->user()->followings()->detach($user);
         $request->user()->followings()->attach($user);
@@ -130,5 +131,17 @@ class UserController extends Controller
         ]);
         $user->delete();
         return redirect('/')->with('message', 'アカウントを削除しました');
+    }
+    public function info()
+    {
+        $user = Auth::user();
+        $infolist = $user->notifications()->paginate(30);
+        // ↑通知テーブルに入ってる情報を取得
+        $user->unreadNotifications->markAsRead();
+        // ↑取得した後に既読にする
+        return view('users.info', [
+            'user' => $user,
+            'infolist' => $infolist,
+        ]);
     }
 }

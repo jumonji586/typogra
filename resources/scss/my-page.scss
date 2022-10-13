@@ -85,7 +85,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     /* box-shadow: rgb(0 ,0 ,0 , 0.1) 0px 0px 10px; */
+}
+.mypage-list-item--unread::after{
+    content:"";
+    width: 13px;
+    height: 13px;
+    display: block;
+    background:linear-gradient(315deg,#fff 50%, transparent 50%) ;
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
 }
 .mypage-list-item:first-of-type{
     margin-top:0px;
