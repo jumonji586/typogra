@@ -18,7 +18,7 @@ class PostController extends Controller
         $allPosts = array();
 
         foreach ($themes as $theme){
-            $posts = Post::where('theme_id', '=', $theme->id)->orderByDesc('created_at')->get()->take(5);
+            $posts = Post::where('theme_id', '=', $theme->id)->withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get()->take(5);
             $allPosts[$theme->id] = $posts;
           }
 
@@ -33,14 +33,14 @@ class PostController extends Controller
         $secondTitle = null;
 
         if($theme === 'all'){
-            $posts = Post::all()->sortByDesc('created_at');
+            $posts = Post::withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
             $firstTitle = '全ての投稿';
         }elseif($theme === 'recommend'){
-            $posts = Post::where('status', '=' , 'recommend')->orderByDesc('created_at')->get();
+            $posts = Post::where('status', '=' , 'recommend')->withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
             $firstTitle = 'Recommend';
         }else{
-            $posts = Post::where('theme_id', '=' , $theme)->orderByDesc('created_at')->get();
-            $subRecommendPosts = Post::where('theme_id', '!=' , $theme)->where('status', '=' , 'recommend')->orderByDesc('created_at')->get();
+            $posts = Post::where('theme_id', '=' , $theme)->withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
+            $subRecommendPosts = Post::where('theme_id', '!=' , $theme)->where('status', '=' , 'recommend')->withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
             $themeTitle = Theme::find($theme)->title;
             $firstTitle = '「'.$themeTitle.'」の投稿一覧';
             $secondTitle = "Recommend";
