@@ -42,7 +42,7 @@
               </post-edit-menu>
         </div>
         <div class="post-detail-btn-box">
-            <a href="" class="common-btn1 common-btn1--tweet"><img class="common-btn1__icon" src="/img/icon/icon-twitter-white.png" alt="">
+            <a href="https://twitter.com/share?url=<?php echo (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>&text={{ $post->theme->title }}%20%23TYPOGRA%20%23タイポグラ%0a" class="common-btn1 common-btn1--tweet" target="_blank"><img class="common-btn1__icon" src="/img/icon/icon-twitter-white.png" alt="">
                 Tweetする</a>
             @if( Auth::id() !== $post->user->id )
             <follow-button :initial-is-followed-by='@json($post->user->isFollowedBy(Auth::user()))' :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['user' => $post->user]) }}">
