@@ -16,10 +16,15 @@
             @forelse($posts as $post)
                 @include('posts.card')
                 @empty
-                <p class="common-empty-message">まだ投稿はありません。</p>
+                <p class="common-empty-message mb20">まだ投稿はありません。</p>
             @endforelse
+            @if (count($posts) > 0 && count($posts) < 4)
+                        @for ($i = count($posts); $i < 4; $i++)
+                            @include('posts.card-empty')
+                        @endfor
+                    @endif
             </div>
-            @if($theme !== 'all' && $theme !== 'recommend')
+            @if( $subRecommendPosts !== null && count($subRecommendPosts) !== 0 )
                 <h2 class="theme-name mt20">{{ $secondTitle }}</h2>
                 <div class="post-box2 mt10 mb50">
                 @foreach($subRecommendPosts as $post)
