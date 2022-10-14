@@ -59,7 +59,7 @@ class PostController extends Controller
             $themeTitle = Theme::find($theme)->title;
             $firstTitle = '「'.$themeTitle.'」の投稿一覧';
             if($posts->count() <= 16){
-                $subRecommendPosts = Post::where('theme_id', '!=' , $theme)->where('status', '=' , 'recommend')->withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
+                $subRecommendPosts = Post::where('theme_id', '!=' , $theme)->where('status', '=' , 'recommend')->inRandomOrder()->take(8)->get();
             }
         }
 
