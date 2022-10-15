@@ -4,11 +4,7 @@
 
 @section('content')
     <main class="layout-box">
-        <aside class="sub-area1">
-            <div class="sub-area-inner">
-                @include('common-parts.side-menu')
-            </div>
-        </aside>
+        @include('common-parts.sub-area1-1')
         <div class="center-area">
             @include('common-parts.header')
             <div>
@@ -27,14 +23,7 @@
             </div>
 
         </div>
-        <aside class="sub-area2">
-            <div class="sub-area-inner sub-area-inner--2">
-                <h2 class="sub-area-title mb5">User Ranking</h2>
-                <div class="user-rank-box">
-                    @include('common-parts.user-ranking')
-                </div>
-            </div>
-        </aside>
+        @include('common-parts.sub-area2-1')
     </main>
 
 @endsection

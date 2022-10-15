@@ -9,11 +9,7 @@
 
 @section('content')
     <main class="layout-box">
-        <aside class="sub-area1">
-            <div class="sub-area-inner">
-                @include('common-parts.side-menu')
-            </div>
-        </aside>
+        @include('common-parts.sub-area1-1')
         <div class="center-area">
             @include('common-parts.header')
             <div>
@@ -43,12 +39,7 @@
         </div>
         {{-- {{ $followings->links('vendor.pagination.original') }} --}}
 
-        <aside class="sub-area2">
-            <div class="sub-area-inner sub-area-inner--2">
-                <h2 class="sub-area-title mb10">New posts</h2>
-                @include('common-parts.sub-area-post',['Posts' => $newPosts ])
-            </div>
-        </aside>
+        @include('common-parts.sub-area2-1')
     </main>
 
 @endsection

@@ -4,17 +4,7 @@
 
 @section('content')
     <main class="layout-box">
-        <aside class="sub-area1">
-            <div class="sub-area-inner">
-                @include('common-parts.side-menu')
-                {{-- <h2 class="sub-area-title mb10">TYPOGRA</h2>
-                <p class="sub-area1__text">
-                    TYPOGRAはタイポグラフィを投稿するためのサイトです。私たちはタイポグラフィの新たな可能性を模索しWEBの限界を越えるべく日夜努力しています。TYPOGRAはタイポグラフィを投稿するためのサイトです。私たちはタイポグラフィの新たな可能性を模索しWEBの限界を越えるべく日夜努力していく所存です。
-                </p>
-                <h2 class="sub-area-title mt30 mb10">Recommend</h2>
-                @include('common-parts.sub-area-post', ['Posts' => $recommendPosts4]) --}}
-            </div>
-        </aside>
+        @include('common-parts.sub-area1-1')
         <div class="center-area">
             @include('common-parts.header')
             @foreach ($allPosts as $key => $posts)
@@ -50,14 +40,7 @@
                 </div>
             @endforeach
         </div>
-        <aside class="sub-area2">
-            <div class="sub-area-inner sub-area-inner--2">
-                <h2 class="sub-area-title mb5">User Ranking</h2>
-                <div class="user-rank-box">
-                    @include('common-parts.user-ranking')
-                </div>
-            </div>
-        </aside>
+        @include('common-parts.sub-area2-1')
     </main>
 
 @endsection
