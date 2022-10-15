@@ -24,8 +24,8 @@
         <img class="totop-btn__img totop-btn__img--2" src="/img/arrow-dots.png" alt="">
       </div>
     </a>
-    <p class="body-side-text">#タイポグラフィ #作字　#TYPOGRAPHY</p>
-    <p class="body-side-text body-side-text--2">#タイポグラフィ #作字 #TYPOGRAPHY</p>
+    <p class="body-side-text">#TYPOGR #タイポグラ #作字 #TYPOGRAPHY #タイポグラフィ</p>
+    <p class="body-side-text body-side-text--2">#TYPOGR #タイポグラ #作字 #TYPOGRAPHY #タイポグラフィ</p>
     {{-- @include('common-parts.header') --}}
     @yield('content')
     @include('common-parts.footer')
