@@ -23,7 +23,7 @@ Auth::routes();
 
 // posts
 Route::get('/',  [PostController::class, 'index'])->name('posts.index');
-Route::resource('posts', PostController::class);
+Route::resource('posts', PostController::class)->except(['show']);
 
 Route::get('posts/create/{theme_id}', [PostController::class, 'create'])->name('posts.create.{theme_id}');
 Route::get('/posts/detail/{display_id}', [PostController::class, 'show'])->name('posts.show');
@@ -32,6 +32,7 @@ Route::delete('posts/{post}/like', [PostController::class, 'unlike'])->name('pos
 Route::put('posts/{post}/recommendset',  [PostController::class, 'recommendOn'])->name('posts.recommendOn')->middleware('auth');
 Route::delete('posts/{post}/recommendset',  [PostController::class, 'recommendOff'])->name('posts.recommendOff')->middleware('auth');
 Route::get('posts/theme/{theme}', [PostController::class, 'theme'])->name('posts.theme.{theme}');
+Route::get('posts/search', [PostController::class, 'search'])->name('posts.search');
 Route::get('posts/{post}/violation', [PostController::class, 'violation'])->name('posts.violation');
 
 

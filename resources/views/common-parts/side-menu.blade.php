@@ -30,12 +30,12 @@
         </a>
         <a class="upper-nav1-icon" href="{{ route('posts.create') }}">
             <img class="upper-nav1-icon__img" src="/img/icon/icon-post.png" alt="">
-            <p class="upper-nav1-icon__text">SEARCH</p>
-        </a>
-        <a class="upper-nav1-icon" href="{{ route('posts.create') }}">
-            <img class="upper-nav1-icon__img" src="/img/icon/icon-search.png" alt="">
             <p class="upper-nav1-icon__text">POST</p>
         </a>
+        {{-- <a class="upper-nav1-icon" href="{{ route('posts.create') }}">
+            <img class="upper-nav1-icon__img" src="/img/icon/icon-search.png" alt="">
+            <p class="upper-nav1-icon__text">SEARCH</p>
+        </a> --}}
     @endauth
 </div>
 
@@ -104,10 +104,8 @@
         </form>
     @endauth
     
-
-    
-    <a class="side-menu-sub-item mt20" href="{{ route('rule') }}">利用規約</a>
-    <a class="side-menu-sub-item" href="{{ route('privacy-policy') }}">プライバシーポリシー</a>
+    <a class="side-menu-sub-item mt20" href="{{ route('rule') }}" target="_blank">利用規約</a>
+    <a class="side-menu-sub-item" href="{{ route('privacy-policy') }}" target="_blank">プライバシーポリシー</a>
     <a class="side-menu-sub-item" href="{{ route('contact.index') }}">お問い合わせ</a>
     @auth
     <a class="side-menu-sub-item" href="{{ route('users.leave',['display_id' => Auth::user()->display_id]) }}">アカウント削除</a>

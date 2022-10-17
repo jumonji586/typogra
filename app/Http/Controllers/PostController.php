@@ -28,10 +28,10 @@ class PostController extends Controller
             'themes' => $themes,
         ]);
     }
-    public function theme($theme){
+    public function theme($theme,?Request $request){
 
         $subRecommendPosts = null;
-
+        
         if($theme === 'all'){
             $posts = Post::withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
             $firstTitle = '全ての投稿';
@@ -54,6 +54,16 @@ class PostController extends Controller
                 $exceptId = $posts->pluck('id');
                 $subRecommendPosts = Post::whereNotIn('id', $exceptId)->where('status', '=' , 'recommend')->inRandomOrder()->take(8)->get();
             }
+        }elseif($theme === 'search'){
+            $keyword = $request->input('keyword');
+            $posts = Post::WhereHas('theme', function ($q) use ($keyword) {
+                $q->where('title', 'like', '%' . $keyword . '%');
+            })->orderByDesc('created_at')->get();
+            $firstTitle = '「'.$keyword.'」の検索結果';
+            if($posts->count() <= 16){
+                $exceptId = $posts->pluck('id');
+                $subRecommendPosts = Post::whereNotIn('id', $exceptId)->where('status', '=' , 'recommend')->inRandomOrder()->take(8)->get();
+            }
         }else{
             $posts = Post::where('theme_id', '=' , $theme)->withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
             $themeTitle = Theme::find($theme)->title;
@@ -71,6 +81,7 @@ class PostController extends Controller
             'secondTitle' => 'Recommend',
         ]);
     }
+
 
     public function create(?int $theme_id = null)
     {
