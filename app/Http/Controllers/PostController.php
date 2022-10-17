@@ -126,9 +126,13 @@ class PostController extends Controller
         }else{
             $imgClass = null;
         }
+
+        $recommendPosts = Post::where('status', '=', 'recommend')->where('id', '!=', $targetPost->id )->inRandomOrder()->get()->take(8);
+
         return view('posts.show', [
             'post' => $targetPost,
             'imgClass' => $imgClass,
+            'recommendPosts' => $recommendPosts,
         ]);
     }
     public function like(Request $request, Post $post)
