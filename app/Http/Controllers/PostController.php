@@ -93,7 +93,7 @@ class PostController extends Controller
     }
     public function store(PostRequest $request, Post $post)
     {
-
+        
         [$save_image_path, $save_thumb_path] = $request->imageProcessing();
 
         $post->image_path = "/" . $save_image_path;

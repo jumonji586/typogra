@@ -28,7 +28,7 @@
                 @endforeach
             </select>
             <p class="page-type2__item-name">作品の説明（※80文字以内）</p>
-            <input class="page-type2__input" type="text" name="title" value="{{ $post->description ?? old('description') }}">
+            <input class="page-type2__input" type="text" name="description" value="{{ $post->description ?? old('description') }}" placeholder="未入力可">
             <br><br>
             <p>※<a class="underline" href="{{ route('rule') }}" target="_blank">利用規約</a>に違反する投稿は削除対象となります。</p>
             <div class="page-type2_btn-box">

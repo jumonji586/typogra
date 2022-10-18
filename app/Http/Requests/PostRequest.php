@@ -39,14 +39,6 @@ class PostRequest extends FormRequest
             'theme_id'=>'テーマ',
         ];
     }
-    public function passedValidation()
-    {
-        $this->tags = collect(json_decode($this->tags))
-            ->slice(0, 5)
-            ->map(function ($requestTag) {
-                return $requestTag->text;
-            });
-    }
     public function imageProcessing(){
         $this->session()->regenerateToken();
         // ↑二重送信防止用
