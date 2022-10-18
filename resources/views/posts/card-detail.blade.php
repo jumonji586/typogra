@@ -22,7 +22,7 @@
             </a>
             <div class="post-detail-data-box__text">
                 <p class="post-detail-data-box__date">
-                    {{ $post->created_at->format('Y/m/d h:m') }}
+                    {{ $post->created_at->format('Y/m/d H:i') }}
                 </p>
                 <a class="post-detail-data-box__user-name" href="{{ route("users.show", ["display_id" => $post->user->display_id]) }}">
                     {{ mb_strimwidth($post->user->name, 0, 16, '…', 'UTF-8') }}
