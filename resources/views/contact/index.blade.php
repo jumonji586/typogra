@@ -16,7 +16,7 @@
             <p class="page-type2__item-name">メールアドレス</p>
             <input class="page-type2__input" type="text" name="email" value="{{ old('email') ??  ( Auth::user()->email ?? '') }}">
             <p class="page-type2__item-name">メールアドレス（確認用）</p>
-            <input class="page-type2__input" type="text" name="email_confirmatio    n" value="{{ old('email_confirmation') ??  ( Auth::user()->email ?? '') }}">
+            <input class="page-type2__input" type="text" name="email_confirmation" value="{{ old('email_confirmation') ??  ( Auth::user()->email ?? '') }}">
             <p class="page-type2__item-name">お問い合わせ内容</p>
             <textarea class="page-type2__textarea" name="contact_body" rows="5">{{ old('contact_body') ??  ( $targetInfo ?? '') }}</textarea>
             <div class="page-type2__item-name page-type2__rule-privacy-box">
