@@ -40,9 +40,9 @@
           <a id="zoomin-btn" @click="zoomIn"></a>
           <a id="zoomout-btn" @click="zoomOut"></a>
         </div>
-        <div class="page-type2_btn-box mt20">
-        <a class="page-type2__cancel-btn" @click="cancel">キャンセル</a>
-        <a class="page-type2__enter-btn" @click="cropImgFunc" v-if="imgSrc != ''">決定</a>
+        <div class="page-type2-btn-box mt20">
+        <a class="page-type2-btn-box__btn" @click="cancel">キャンセル</a>
+        <a class="page-type2-btn-box__btn" @click="cropImgFunc" v-if="imgSrc != ''">決定</a>
         </div>
       </div>
     </div>

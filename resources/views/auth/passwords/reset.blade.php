@@ -16,9 +16,9 @@
       <input class="page-type2__input" type="password" id="password" name="password">
       <p class="page-type2__item-name">新しいパスワード（再入力）</p>
       <input class="page-type2__input" type="password" id="password_confirmation" name="password_confirmation">
-      <div class="page-type2_btn-box">
-        <a class="page-type2__cancel-btn" href="/">キャンセル</a>
-        <input class="page-type2__enter-btn" type="submit" value="送信">
+      <div class="page-type2-btn-box">
+        <a class="page-type2-btn-box__btn" href="/">キャンセル</a>
+        <input class="page-type2-btn-box__btn" type="submit" value="送信">
       </div>
     </form>
   </div>

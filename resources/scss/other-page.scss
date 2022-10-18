@@ -11,23 +11,7 @@
     align-items: center;
     flex-direction: column;
 }
-// .page-type2__title{
-//     text-align: center;
-//     font-size: 30px;
-//     font-weight: 100;
-//     width: 50%;
-//     max-width: 600px;
-//     display: flex;
-//     align-items: center;
-//     flex-direction: column;
-// }
-// .page-type2__title::after{
-//     content:"";
-//     display: inline-block;
-//     width: 30px;
-//     height: 4px;
-//     background-color: #fff;
-// }
+
 .page-type2__inner{
     background-color: rgba(0, 0, 0, 0.1);
     max-width: 600px;
@@ -71,14 +55,13 @@
 .page-type2__rule-privacy-box{
     display: flex;
 }
-.page-type2_btn-box{
+.page-type2-btn-box{
     margin-top:50px;
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
-.page-type2__cancel-btn,
-.page-type2__enter-btn{
+.page-type2-btn-box__btn{
     width: 48%;
     border: none;
     display: flex;
@@ -90,10 +73,13 @@
     background-color: #fff;
     background-color: rgba(255, 255, 255, 0.8);
 }
-.page-type2__enter-btn{
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.8);
+.page-type2-btn-box__btn-icon{
+    width: 25px;
+    image-rendering: -webkit-optimize-contrast;
+    margin-right: 7px;
+    vertical-align: middle;
 }
+
 .profedit-img-box{
     position: relative;
     width: 100px;
@@ -165,31 +151,7 @@
     height: 100%;
     background-color: #fff;
 }
-.page-type2__inner .sns-btn{
-    display: block;
-    color: #000;
-    padding:10px;
-    text-align: center;
-    font-weight: 600;
-    // border: 3px double #fff;
-    background-color: #3B3B3B;
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.8);
-    margin-top:30px;
-    // margin-left:auto;
-    // margin-right: auto;
-    max-width: 250px;
-}
-.page-type2__inner .sns-btn2{
-    margin-top:15px;
-    margin-bottom:40px;
-}
-.page-type2__inner .sns-btn img{
-    width: 25px;
-    image-rendering: -webkit-optimize-contrast;
-    margin-right: 7px;
-    vertical-align: middle;
-}
+
 .page-type2__user-icon{
     border-radius: 50%;
     margin:35px auto 15px;

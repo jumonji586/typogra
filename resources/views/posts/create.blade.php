@@ -31,9 +31,9 @@
             <input class="page-type2__input" type="text" name="description" value="{{ $post->description ?? old('description') }}" placeholder="未入力可">
             <br><br>
             <p>※<a class="underline" href="{{ route('rule') }}" target="_blank">利用規約</a>に違反する投稿は削除対象となります。</p>
-            <div class="page-type2_btn-box">
-                <a href="/" class="page-type2__cancel-btn">キャンセル</a>
-                <input type="submit" class="page-type2__enter-btn" value="投稿する">
+            <div class="page-type2-btn-box">
+                <a href="/" class="page-type2-btn-box__btn">キャンセル</a>
+                <input type="submit" class="page-type2-btn-box__btn" value="投稿する">
             </div>
         </form>
     </div>

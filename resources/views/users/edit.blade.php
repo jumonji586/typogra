@@ -25,10 +25,10 @@
                         <a href="{{ route('password.request') }}" class="underline">＞ パスワード再設定はこちら</a>
                     </p>
                 @endif
-                <div class="page-type2_btn-box">
-                    <a class="page-type2__cancel-btn"
+                <div class="page-type2-btn-box">
+                    <a class="page-type2-btn-box__btn"
                         href="{{ route('users.show', ['display_id' => $user->display_id]) }}">キャンセル</a>
-                    <input class="page-type2__enter-btn" type="submit" value="保存">
+                    <input class="page-type2-btn-box__btn" type="submit" value="保存">
                 </div>
             </form>
         </div>

@@ -20,9 +20,9 @@
                 <input class="page-type2__checkbox" type="checkbox" name="delete_accept">
                 <p>上記「アカウント削除に関する注意事項」を了承する</p>
             </div>
-            <div class="page-type2_btn-box">
-                <a class="page-type2__cancel-btn" href="/">キャンセル</a>
-                <input class="page-type2__enter-btn" type="submit" value="削除する">
+            <div class="page-type2-btn-box">
+                <a class="page-type2-btn-box__btn" href="/">キャンセル</a>
+                <input class="page-type2-btn-box__btn" type="submit" value="削除する">
             </div>
         </form>
     </div>

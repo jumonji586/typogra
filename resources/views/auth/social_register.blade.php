@@ -25,9 +25,9 @@
         <input class="page-type2__checkbox" type="checkbox" name="rule-privacy">
         <p><a href="{{ route('rule') }}" class="fw-b underline" target="_blank">利用規約</a> および <a href="{{ route('privacy-policy') }}" class="fw-b underline" target="_blank">プライバシーポリシー</a> に同意する</p>
       </div>
-      <div class="page-type2_btn-box">
-        <a href="/" class="page-type2__cancel-btn">キャンセル</a>
-        <input class="page-type2__enter-btn" type="submit" value="登録">
+      <div class="page-type2-btn-box">
+        <a href="/" class="page-type2-btn-box__btn">キャンセル</a>
+        <input class="page-type2-btn-box__btn" type="submit" value="登録">
       </div>
     </form>
   </div>

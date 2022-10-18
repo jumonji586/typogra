@@ -23,9 +23,9 @@
                 <input class="page-type2__checkbox" type="checkbox" name="privacy">
                 <p><a href="" class="fw-b underline" target="_blank">プライバシーポリシー</a> に同意する</p>
             </div>
-            <div class="page-type2_btn-box">
-                <a class="page-type2__cancel-btn" href="/">キャンセル</a>
-                <input class="page-type2__enter-btn" type="submit" value="送信">
+            <div class="page-type2-btn-box">
+                <a class="page-type2-btn-box__btn" href="/">キャンセル</a>
+                <input class="page-type2-btn-box__btn" type="submit" value="送信">
             </div>
         </form>
     </div>
