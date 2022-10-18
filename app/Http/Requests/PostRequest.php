@@ -26,7 +26,7 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'description' => ['string' ,new textMaxWidth(160)],
+            'description' => ['nullable','string',new textMaxWidth(160)],
             'image'=>'required|file|image|mimes:jpg,png,gif,jpeg',
             'theme_id'=>'required|numeric',
         ];
