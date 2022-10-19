@@ -32,10 +32,10 @@
             <img class="upper-nav1-icon__img" src="/img/icon/icon-post.png" alt="">
             <p class="upper-nav1-icon__text">POST</p>
         </a>
-        {{-- <a class="upper-nav1-icon" href="{{ route('posts.create') }}">
-            <img class="upper-nav1-icon__img" src="/img/icon/icon-search.png" alt="">
-            <p class="upper-nav1-icon__text">SEARCH</p>
-        </a> --}}
+        <a class="upper-nav1-icon" href="/">
+            <img class="upper-nav1-icon__img" src="/img/icon/icon-top.png" alt="">
+            <p class="upper-nav1-icon__text">TOP</p>
+        </a>
     @endauth
 </div>
 
