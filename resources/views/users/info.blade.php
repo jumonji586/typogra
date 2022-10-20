@@ -51,7 +51,7 @@
                       </div>
                     </div>               
                   @empty
-                  <div class="info-item">まだお知らせはありません。</div>
+                  <p class="common-empty-message">まだお知らせはありません。</p>
                   @endforelse
                   {{-- {{ $infolist->links('vendor.pagination.original') }} --}}
             
