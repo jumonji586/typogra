@@ -72,6 +72,12 @@
             <p class="side-menu-item__sub-text">ログイン</p>
         </div>
     </a>
+    <a class="side-menu-item" href="/">
+        <div class="side-menu-item__inner">
+            <p class="side-menu-item__main-text">TOP PAGE</p>
+            <p class="side-menu-item__sub-text">トップページ</p>
+        </div>
+    </a>
     @endguest
 
     @auth
