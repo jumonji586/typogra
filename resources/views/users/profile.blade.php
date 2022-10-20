@@ -17,12 +17,14 @@
             </div>
             <div class="profile-btn-box">
                 @if( Auth::id() !== $user->id )
-                {{-- <a class="profile-btn-box__btn" href="">フォロー済</a> --}}
                 <follow-button :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))' :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['user' => $user]) }}">
                 </follow-button>
                 @endif
                 @if( Auth::id() === $user->id )
                 <a class="common-btn1" href="{{ route('users.edit') }}">プロフ・設定変更</a>
+                @endif
+                @if( Auth::user()->role === "admin" && Auth::id() !== $user->id)
+                    <a class="common-btn1" href="{{ route('users.leave', ['display_id' => $user->display_id]) }}">管理者権限でID削除</a>
                 @endif
             </div>
         </div>
