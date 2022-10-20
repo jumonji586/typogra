@@ -500,3 +500,45 @@ body {
     display: flex;
     align-items: center;
 }
+
+#flash-message {
+    position: fixed;
+    bottom: 50px;
+    left: -350px;
+    z-index: 15;
+    display: flex;
+    background-color: #ffffff;
+    padding: 20px 30px 20px 20px;
+    width: 250px;
+    animation: message-anime 3s;
+  }
+  .flash-message__icon-box {
+    margin-right: 8px;
+    width: 20px;
+    flex-shrink: 0;
+  }
+  .flash-message__icon{
+    vertical-align: middle;
+  }
+  .flash-message__text{
+    color: #000;
+  }
+
+  @keyframes message-anime {
+    0% {
+      left: -50px;
+      opacity: 0;
+    }
+    15% {
+      left: 0px;
+      opacity: 1;
+    }
+    80%{
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: 0px;
+      visibility: hidden;
+    }
+  }

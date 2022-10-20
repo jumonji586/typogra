@@ -19,6 +19,16 @@
 </style>
 <body>
   <div id="app" class="wrapperAll" v-cloak>
+    @if (session('message'))
+    <div id="flash-message">
+      <div class="flash-message__icon-box">
+        <img class="flash-message__icon" src="/img/icon/icon-check.png">
+      </div>
+      <p class="flash-message__text">
+          {{session('message')}}
+      </p>
+    </div>
+    @endif
     <a href="#app" class="totop-btn-box">
       <div class="totop-btn">
         <img class="totop-btn__img totop-btn__img--1" src="/img/arrow-dots.png" alt="">
@@ -31,6 +41,19 @@
     @yield('content')
     @include('common-parts.footer')
   </div>
+  <script>
+  // ブラウザの戻るボタンを押した際にフラッシュメッセージが再表示されるのを防ぐための処理
+  if( "{{session('message')}}" ){
+    const messageIdValue = "{{ uniqid() }}";
+    if (sessionStorage) {
+      if (sessionStorage.getItem('messageId') === messageIdValue) {
+        document.getElementById('flash-message').style.display = "none";
+      }else{
+        sessionStorage.setItem('messageId', messageIdValue);
+      }
+    }
+  }
+  </script>
   <script src="/js/typogra.js"></script>
 </body>
 

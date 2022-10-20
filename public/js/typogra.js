@@ -7,7 +7,7 @@ function previewImage(obj) {
      });
      fileReader.readAsDataURL(obj.files[0]);
  }
- 
+
  // フォームの多重送信防止
  for (let i = 0; i < document.forms.length; i++) {
      document.forms[i].addEventListener('submit', function (e) {
