@@ -80,7 +80,7 @@ body {
 }
 .center-area{
     width: 820px;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 120px);
 }
 
 // head-area---------------------------------------------------
@@ -145,12 +145,13 @@ body {
 .footer{
     display: flex;
     height: 70px;
+    margin-top: 50px;
+    // ↑このheightとmargin-topの合計値に変更があった場合は.center-areaと.page-type2のmin-heightの値も変更する
     justify-content: center;
     align-items: center;
     font-size: 13px;
     font-family: SenobiGothic;
     font-weight: 100;
-    margin-top: 30px;
 }
 
 // sub-area------------------------------------------------
@@ -542,3 +543,27 @@ body {
       visibility: hidden;
     }
   }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top:35px;
+}
+
+.pagination__link
+{
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.13);
+    border-radius: 50%;
+}
+.pagination__link--active{
+    background-color: #505a63;
+}
+.pagination__link--disabled{
+    display: none;
+}

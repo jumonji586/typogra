@@ -33,13 +33,13 @@ class PostController extends Controller
         $subRecommendPosts = null;
         
         if($theme === 'all'){
-            $posts = Post::withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
+            $posts = Post::withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->paginate(40);
             $firstTitle = '全ての投稿';
         }elseif($theme === 'recommend'){
-            $posts = Post::where('status', '=' , 'recommend')->orderByDesc('created_at')->get();
+            $posts = Post::where('status', '=' , 'recommend')->orderByDesc('created_at')->paginate(40);
             $firstTitle = 'Recommend';
         }elseif($theme === 'liked'){
-            $posts = Auth::user()->likes()->withPivot('created_at')->orderByDesc('pivot_created_at')->get();
+            $posts = Auth::user()->likes()->withPivot('created_at')->orderByDesc('pivot_created_at')->paginate(40);
             // ↑いいねを押した順番に並べ替え
             $firstTitle = 'イイねした投稿';
             if($posts->count() <= 16){
@@ -48,7 +48,7 @@ class PostController extends Controller
             }
         }elseif($theme === 'followees'){
             $followUserId = Auth::user()->followings->pluck('id');
-            $posts = Post::whereIn('user_id', $followUserId)->orderByDesc('created_at')->get();
+            $posts = Post::whereIn('user_id', $followUserId)->orderByDesc('created_at')->paginate(40);
             $firstTitle = 'フォローユーザーの投稿';
             if($posts->count() <= 16){
                 $exceptId = $posts->pluck('id');
@@ -58,14 +58,14 @@ class PostController extends Controller
             $keyword = $request->input('keyword');
             $posts = Post::WhereHas('theme', function ($q) use ($keyword) {
                 $q->where('title', 'like', '%' . $keyword . '%');
-            })->orderByDesc('created_at')->get();
+            })->orderByDesc('created_at')->paginate(40);
             $firstTitle = '「'.$keyword.'」の検索結果';
             if($posts->count() <= 16){
                 $exceptId = $posts->pluck('id');
                 $subRecommendPosts = Post::whereNotIn('id', $exceptId)->where('status', '=' , 'recommend')->inRandomOrder()->take(8)->get();
             }
         }else{
-            $posts = Post::where('theme_id', '=' , $theme)->withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->get();
+            $posts = Post::where('theme_id', '=' , $theme)->withCount('likes')->orderByDesc('likes_count')->orderByDesc('created_at')->paginate(40);
             $themeTitle = Theme::find($theme)->title;
             $firstTitle = '「'.$themeTitle.'」の投稿一覧';
             if($posts->count() <= 16){

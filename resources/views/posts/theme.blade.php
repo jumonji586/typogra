@@ -22,12 +22,13 @@
             </div>
             @if( $subRecommendPosts !== null && count($subRecommendPosts) !== 0 )
                 <h2 class="theme-name mt20">{{ $secondTitle }}</h2>
-                <div class="post-box2 mt10 mb50">
+                <div class="post-box2 mt10">
                 @foreach($subRecommendPosts as $post)
                     @include('posts.card')
                 @endforeach
                 </div>
             @endif
+            {{ $posts->links('vendor.pagination.original') }}
         </div>
         @include('common-parts.sub-area2-1')
     </main>

@@ -26,9 +26,9 @@
             
             <div class="mypage-list">
                 @if ($followPageFlag === 'followers')
-                <h2 class="theme-name mt40">フォロワー</h2>
+                <h2 class="theme-name mt30">フォロワー</h2>
             @elseif($followPageFlag === 'followings')
-                <h2 class="theme-name mt40">フォロー</h2>
+                <h2 class="theme-name mt30">フォロー</h2>
             @endif
                 @forelse($followList as $person)
                     @include('users.follow-card')
@@ -36,8 +36,9 @@
                     <p class="common-empty-message">該当するユーザーが存在しません。</p>
                 @endforelse
             </div>
+            {{ $followList->links('vendor.pagination.original') }}
         </div>
-        {{-- {{ $followings->links('vendor.pagination.original') }} --}}
+        
 
         @include('common-parts.sub-area2-1')
     </main>

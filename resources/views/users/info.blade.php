@@ -18,7 +18,7 @@
             @include('users.profile')
 
             <div class="mypage-list">
-                <h2 class="theme-name mt40">通知</h2>
+                <h2 class="theme-name mt30">通知</h2>
                 @forelse($infolist as $infoitem)
                 @if($infoitem->read_at == null)
                     <div class="mypage-list-item mypage-list-item--unread">
@@ -53,7 +53,7 @@
                   @empty
                   <p class="common-empty-message">まだお知らせはありません。</p>
                   @endforelse
-                  {{-- {{ $infolist->links('vendor.pagination.original') }} --}}
+                  {{ $infolist->links('vendor.pagination.original') }}
             
                 </div>
             

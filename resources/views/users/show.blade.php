@@ -13,15 +13,15 @@
                 <span>「{{$user->name}}」のマイページ</span>
             </div>
             @include('users.profile')
-            <h2 class="theme-name mt40">投稿一覧</h2>
-            <div class="post-box2 mt10 mb50">
+            <h2 class="theme-name mt30">投稿一覧</h2>
+            <div class="post-box2 mt10">
                 @forelse($userPosts as $post)
                 @include('posts.card')
                 @empty
                 <p class="common-empty-message">まだ投稿はありません。</p>
                 @endforelse
             </div>
-
+            {{ $userPosts->links('vendor.pagination.original') }}
         </div>
         @include('common-parts.sub-area2-1')
     </main>
