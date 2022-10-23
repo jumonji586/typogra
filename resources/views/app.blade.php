@@ -19,6 +19,12 @@
 </style>
 <body>
   <div id="app" class="wrapperAll" v-cloak>
+    <div class="smp-message">
+      <img class="smp-message__logo" src="/img/logo.png" alt="">
+      <p>
+        スマートフォン・タブレットには現在対応していません。
+      </p>
+    </div>
     @if (session('message'))
     <div id="flash-message">
       <div class="flash-message__icon-box">
