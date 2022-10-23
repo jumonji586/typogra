@@ -2,7 +2,7 @@
 
 
 
-@section('title', 'TYPOGRA タイポグラ | 作字・タイポグラフィ専用サイト')
+@section('title', '「'.$user->name.' 」さんへの通知一覧 | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 
 
 @section('content')
@@ -13,7 +13,7 @@
             <div>
                 <a href="/">TOP</a>
                 <span> > </span>
-                <span>「{{ $user->name }}」へのお知らせ</span>
+                <span>「{{ $user->name }}」さんへの通知一覧</span>
             </div>
             @include('users.profile')
 

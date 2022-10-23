@@ -1,6 +1,5 @@
 @extends('app')
-
-@section('title', 'TYPOGRA タイポグラ | 作字・タイポグラフィ専用サイト')
+@section('title', $firstTitle.' | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 
 @section('content')
     <main class="layout-box">

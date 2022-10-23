@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'アカウント削除')
+@section('title', 'アカウント削除 | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 
 
 @section('content')

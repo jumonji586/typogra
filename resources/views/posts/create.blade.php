@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', '投稿する')
+@section('title', 'タイポグラフィ投稿 | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 
 
 @section('content')

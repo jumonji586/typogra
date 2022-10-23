@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', '')
+@section('title', 'プライバシーポリシー | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 
 @section('content')
 <div class="page-type2">

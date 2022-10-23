@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'TYPOGRA タイポグラ | 作字・タイポグラフィ専用サイト')
+@section('title', '「'.$post->theme->title.'」posted by '.$post->user->name.' | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 
 @section('content')
 <main class="layout-box">

@@ -1,9 +1,9 @@
 @extends('app')
 
 @if ($followPageFlag === 'followers')
-    @section('フォロワー', 'TYPOGRA タイポグラ | 作字・タイポグラフィ専用サイト')
+    @section('title', '「'.$user->name.' 」さんのフォロワー | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 @elseif($followPageFlag === 'followings')
-    @section('title', 'TYPOGRA タイポグラ | 作字・タイポグラフィ専用サイト')
+    @section('title', '「'.$user->name.' 」さんがフォロー中のユーザー | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 @endif
 
 
@@ -16,9 +16,9 @@
                 <a href="/">TOP</a>
                 <span> > </span>
                 @if ($followPageFlag === 'followers')
-                    <span>「{{ $user->name }}」のフォロワー</span>
+                    <span>「{{ $user->name }}」さんのフォロワー</span>
                 @elseif($followPageFlag === 'followings')
-                    <span>「{{ $user->name }}」がフォロー中のユーザー</span>
+                    <span>「{{ $user->name }}」さんがフォロー中のユーザー</span>
                 @endif
             </div>
             @include('users.profile')

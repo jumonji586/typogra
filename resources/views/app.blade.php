@@ -9,6 +9,7 @@
   <title>
     @yield('title')
   </title>
+  <meta name="description" content="TYPOGRA（タイポグラ）は、作字・タイポグラフィ専用の投稿サイトです。">
   <link href="/css/style.css" rel="stylesheet">
   @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>

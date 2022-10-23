@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', '')
+@section('title', 'プロフ・設定変更 | TYPOGRA タイポグラ | 作字・タイポグラフィ投稿サイト')
 
 
 @section('content')
@@ -8,7 +8,7 @@
     <div class="page-type2">
         @include('common-parts.header-logo')
         <div class="page-type2__inner">
-            <p class="page-type2__title">プロフ・登録内容変更</p>
+            <p class="page-type2__title">プロフ・設定変更</p>
             @include('common-parts.error_card_list')
             <form method="POST" action="{{ route('users.update',['user' => $user ])}}" enctype="multipart/form-data">
                 @method('PATCH')
