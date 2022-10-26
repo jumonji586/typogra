@@ -25,36 +25,45 @@ Auth::routes();
 Route::get('/',  [PostController::class, 'index'])->name('posts.index');
 Route::resource('posts', PostController::class)->except(['show']);
 
-Route::get('posts/create/{theme_id}', [PostController::class, 'create'])->name('posts.create.{theme_id}');
-Route::get('/posts/detail/{display_id}', [PostController::class, 'show'])->name('posts.show');
-Route::put('posts/{post}/like',  [PostController::class, 'like'])->name('posts.like')->middleware('auth');
-Route::delete('posts/{post}/like', [PostController::class, 'unlike'])->name('posts.unlike')->middleware('auth');
-Route::put('posts/{post}/recommendset',  [PostController::class, 'recommendOn'])->name('posts.recommendOn')->middleware('auth');
-Route::delete('posts/{post}/recommendset',  [PostController::class, 'recommendOff'])->name('posts.recommendOff')->middleware('auth');
-Route::get('posts/theme/{theme}', [PostController::class, 'theme'])->name('posts.theme.{theme}');
-Route::get('posts/search', [PostController::class, 'search'])->name('posts.search');
-Route::get('posts/{post}/violation', [PostController::class, 'violation'])->name('posts.violation');
-
+Route::prefix('posts')->name('posts.')->group(function () {
+    Route::middleware('auth')->group(function () {
+        Route::put('/{post}/recommendset',  [PostController::class, 'recommendOn'])->name('recommendOn');
+        Route::delete('/{post}/recommendset',  [PostController::class, 'recommendOff'])->name('recommendOff');
+        Route::get('/create/{theme_id}', [PostController::class, 'create'])->name('create.{theme_id}');
+        Route::put('/{post}/like',  [PostController::class, 'like'])->name('like');
+        Route::delete('/{post}/like', [PostController::class, 'unlike'])->name('unlike');
+    });
+    Route::get('/detail/{display_id}', [PostController::class, 'show'])->name('show');
+    Route::get('/theme/{theme}', [PostController::class, 'theme'])->name('theme.{theme}');
+    Route::get('/search', [PostController::class, 'search'])->name('search');
+    Route::get('/{post}/violation', [PostController::class, 'violation'])->name('violation');
+});
 
 // comment
-Route::post('comment/sendcomment', [CommentController::class, 'sendComment'])->name('comment.sendComment');
-Route::get('comment/getcomment', [CommentController::class, 'getComment'])->name('comment.getComment');
-Route::delete('comment/deletecomment', [CommentController::class, 'deleteComment'])->name('comment.deleteComment');
-Route::post('comment/sendsubcomment', [CommentController::class, 'sendSubComment'])->name('comment.sendSubComment');
-Route::get('comment/getsubcomment', [CommentController::class, 'getSubComment'])->name('comment.getSubComment');
-Route::delete('comment/deletesubcomment', [CommentController::class, 'deleteSubComment'])->name('comment.deleteSubComment');
+Route::prefix('comment')->name('comment.')->group(function () {
+    Route::post('/sendcomment', [CommentController::class, 'sendComment'])->name('sendComment');
+    Route::get('/getcomment', [CommentController::class, 'getComment'])->name('getComment');
+    Route::delete('/deletecomment', [CommentController::class, 'deleteComment'])->name('deleteComment');
+    Route::post('/sendsubcomment', [CommentController::class, 'sendSubComment'])->name('sendSubComment');
+    Route::get('/getsubcomment', [CommentController::class, 'getSubComment'])->name('getSubComment');
+    Route::delete('/deletesubcomment', [CommentController::class, 'deleteSubComment'])->name('deleteSubComment');
+});
 
 // users
-Route::get('users/detail/{display_id}', [UserController::class, 'Myshow'])->name('users.show');
-Route::get('users/edit',  [UserController::class, 'Myedit'])->name('users.edit');
-Route::patch('users/{user}', [UserController::class, 'update'])->name('users.update');
-Route::put('users/{user}/follow', [UserController::class, 'follow'])->name('users.follow');
-Route::delete('users/{user}/follow', [UserController::class, 'unfollow'])->name('users.unfollow');
-Route::get('/{display_id}/followings', [UserController::class, 'followings'])->name('users.followings');
-Route::get('/{display_id}/followers', [UserController::class, 'followers'])->name('users.followers');
-Route::get('users/leave/{display_id}', [UserController::class, 'leave'])->name('users.leave');
-Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-Route::get('users/info',  [UserController::class, 'info'])->name('users.info')->middleware('auth');
+Route::prefix('users')->name('users.')->group(function () {
+    Route::middleware('auth')->group(function () {
+        Route::get('/edit',  [UserController::class, 'Myedit'])->name('edit');
+        Route::patch('/{user}', [UserController::class, 'update'])->name('update');
+        Route::put('/{user}/follow', [UserController::class, 'follow'])->name('follow');
+        Route::delete('/{user}/follow', [UserController::class, 'unfollow'])->name('unfollow');
+        Route::get('/leave/{display_id}', [UserController::class, 'leave'])->name  ('leave');
+        Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
+        Route::get('/info',  [UserController::class, 'info'])->name('info');
+    });
+    Route::get('/detail/{display_id}', [UserController::class,'Myshow'])->name('show');
+    Route::get('/{display_id}/followings', [UserController::class, 'followings'])->name('followings');
+    Route::get('/{display_id}/followers', [UserController::class, 'followers']) ->name('followers');
+});
 
 // Auth
 Route::prefix('login')->name('login.')->group(function () {
@@ -77,8 +86,4 @@ Route::get('/rule', function () {
 Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 })->name('privacy-policy');
-
-// Route::prefix('posts')->name('posts.')->group(function () {
-//     Route::get('/index', [PostController::class, 'index'])->name('index');
-// });
 
