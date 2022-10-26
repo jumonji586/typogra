@@ -17,7 +17,7 @@ class UserController extends Controller
         if(!$user){
             return redirect('/')->with('message', '該当のユーザーは存在しません');
         }
-        $userPosts = $user->posts()->orderByDesc('created_at')->paginate(40);
+        $userPosts = $user->posts()->with(['user','likes'])->orderByDesc('created_at')->paginate(40);
         return view('users.show', [
             'user' => $user,
             'userPosts' => $userPosts,
