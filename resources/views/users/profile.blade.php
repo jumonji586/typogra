@@ -20,12 +20,14 @@
                 <follow-button :initial-is-followed-by='@json($user->isFollowedBy(Auth::user()))' :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['user' => $user]) }}">
                 </follow-button>
                 @endif
-                @if( Auth::id() === $user->id )
-                <a class="common-btn1" href="{{ route('users.edit') }}">プロフ・設定変更</a>
-                @endif
-                @if( Auth::user()->role === "admin" && Auth::id() !== $user->id)
+                @auth
+                    @if( Auth::id() === $user->id )
+                    <a class="common-btn1" href="{{ route('users.edit') }}">プロフ・設定変更</a>
+                    @endif
+                    @if( Auth::user()->role === "admin" && Auth::id() !== $user->id)
                     <a class="common-btn1" href="{{ route('users.leave', ['display_id' => $user->display_id]) }}">管理者権限でID削除</a>
-                @endif
+                    @endif
+                @endauth
             </div>
         </div>
         <div class="profile-img-box">
