@@ -1,9 +1,12 @@
 <div class="profile">
     <div class="profile__inner">
         <div class="profile-data-box">
-            <a href="">
-                <img class="profile-user-icon" src="{{ $user->prof_image_path }}" alt="">
-            </a>
+            <div class="profile-user-icon">
+                <img  src="{{ $user->prof_image_path }}" alt="">
+                <common-modal>
+                    <img class="profile-user-icon__modal-img" src="{{ $user->prof_image_path }}" alt="">
+                </common-modal>
+            </div>
             <p class="profile-user-name">{{$user->name}}</p>
             <p class="profile-user-text">{{$user->prof_text}}
             </p>

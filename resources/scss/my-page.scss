@@ -28,6 +28,10 @@
     border-radius: 50%;
     overflow: hidden;
     width: 60px;
+    position: relative;
+}
+.profile-user-icon__modal-img{
+    border-radius: 50%;
 }
 .profile-user-name{
     font-size: 15px;
