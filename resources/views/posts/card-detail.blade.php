@@ -12,9 +12,7 @@
         </common-modal>
     </div>
     <div class="post-detail-data-box">
-        <h2>
-            <a class="post-detail-data-box__theme" href="">{{ $post->theme->title }}</a>
-        </h2>
+        <h2 class="post-detail-data-box__theme">{{ $post->theme->title }}</h2>
         <p class="post-detail-data-box__description">{{ $post->description }}</p>
         <div class="post-detail-data-box__inner">
             <a href="{{ route("users.show", ["display_id" => $post->user->display_id]) }}">
