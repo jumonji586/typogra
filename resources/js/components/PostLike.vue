@@ -1,8 +1,8 @@
 <template>
   <div class="like-btn-box">
     <a class="heart-mark-box" @click="clickLike" :class="{'active-heart':this.isLikedBy, 'heart-anime':this.gotToLike}">
-      <img class="heart-mark-white icon" src="/img/icon/icon-heart-white.png" alt="">
-      <img class="heart-mark-red icon" src="/img/icon/icon-heart-red.png" alt="">
+      <img class="heart-mark-white icon" src="../../../public/img/icon/icon-heart-white.png" alt="">
+      <img class="heart-mark-red icon" src="../../../public/img/icon/icon-heart-red.png" alt="">
     </a>
     <span class="like-count">{{ countLikes }}</span>
   </div>

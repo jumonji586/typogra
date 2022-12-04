@@ -28,8 +28,8 @@
         @click="replyListActive = !replyListActive"
         class="reply-list-btn"
         >{{ SubCommentList.length }} 件の返信を<span v-if="!replyListActive"
-          >表示<img src="/img/arrow-white-down.png"></span
-        ><span v-else>非表示<img src="/img/arrow-white-up.png"></span></a
+          >表示<img src="../../../public/img/arrow-white-down.png"></span
+        ><span v-else>非表示<img src="../../../public/img/arrow-white-up.png"></span></a
       >
     </div>
     <div v-if="replyListActive"

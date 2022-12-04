@@ -1,17 +1,17 @@
 <template>
   <div class="post-edit-menu-box" :class="{active:Active}">
     <a class="post-edit-btn" @click="Active = !Active" 
-      ><img class="icon wid100" src="/img/icon/icon-menu.png" alt=""
+      ><img class="icon wid100" src="../../../public/img/icon/icon-menu.png" alt=""
     /></a>
     <div v-if="btntype === 'illust'" class="post-edit-menu" :class="{active:Active}">
-      <a v-if="userflag || role" @click="Open = true"><img class="icon" src="/img/icon/icon-delete.png">投稿を削除する</a>
-      <a v-if="!userflag" :href="endpointViolation" target="_blank"><img class="icon" src="/img/icon/icon-violation.png">違反報告する</a>
-      <a v-if="!recommendflag && role" @click="recommendOn"><img class="icon" src="/img/icon/icon-recommend.png">おススメに登録</a>
-      <a v-if="recommendflag && role" @click="recommendOff"><img class="icon" src="/img/icon/icon-recommend.png">おススメを解除</a>
+      <a v-if="userflag || role" @click="Open = true"><img class="icon" src="../../../public/img/icon/icon-delete.png">投稿を削除する</a>
+      <a v-if="!userflag" :href="endpointViolation" target="_blank"><img class="icon" src="../../../public/img/icon/icon-violation.png">違反報告する</a>
+      <a v-if="!recommendflag && role" @click="recommendOn"><img class="icon" src="../../../public/img/icon/icon-recommend.png">おススメに登録</a>
+      <a v-if="recommendflag && role" @click="recommendOff"><img class="icon" src="../../../public/img/icon/icon-recommend.png">おススメを解除</a>
     </div>
     <div v-if="btntype === 'comment'||btntype === 'comment2'" class="post-edit-menu" :class="{active:Active}">
-      <a v-if="userflag || role" @click="Open = true"><img class="icon" src="/img/icon/icon-delete.png">削除する</a>
-      <a v-if="!userflag" :href="endpointViolation + '?message=' + comment" target="_blank"><img class="icon" src="/img/icon/icon-violation.png">違反報告する</a>
+      <a v-if="userflag || role" @click="Open = true"><img class="icon" src="../../../public/img/icon/icon-delete.png">削除する</a>
+      <a v-if="!userflag" :href="endpointViolation + '?message=' + comment" target="_blank"><img class="icon" src="../../../public/img/icon/icon-violation.png">違反報告する</a>
     </div>
     <div class="post-edit-modal" :class="{modalopen:Open}">
       <div class="post-edit-modal-bg" @click="Open = false"></div>

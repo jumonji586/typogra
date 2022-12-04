@@ -5,7 +5,7 @@
       <img class="old-prof-img" :src="profImgUrl" alt="">
       <img class="new-prof-img" v-if="cropImg != ''" :src="cropImg" />
       <label for="prof-edit-img">
-        <img src="/img/icon/icon-camera.png" alt="">
+        <img src="../../../public/img/icon/icon-camera.png" alt="">
       </label>
       <input id="prof-edit-img" type="file" name="prof_image" accept="image/*" ref="fileinput" @change="setImage" />
     </div>
