@@ -35,19 +35,7 @@ class AppServiceProvider extends ServiceProvider
             $themeList = Theme::all();
             view()->share('themeList', $themeList);
         }
-        if (Schema::hasTable('posts')) {
-            $recommendPosts = Post::where('status', '=', 'recommend')->inRandomOrder()->get();
-            $recommendPosts4 = $recommendPosts->take(4);
-            $recommendPosts6 = $recommendPosts->take(6);
-            $recommendPosts8 = $recommendPosts->take(8);
-            $newPosts = Post::all()->sortByDesc('created_at')->take(8);
-
-            view()->share([
-                'recommendPosts4' => $recommendPosts4,
-                'recommendPosts6' => $recommendPosts6,
-                'recommendPosts8' => $recommendPosts8,
-                'newPosts' => $newPosts,
-            ]);
-        }
+        // config('app.url') が https 始まりか？http 始まりか？ をもとに強制的に scheme を設定する
+        \Illuminate\Support\Facades\URL::forceScheme(\Illuminate\Support\Str::startsWith(config('app.url'), 'https') ? 'https' : 'http');
     }
 }
