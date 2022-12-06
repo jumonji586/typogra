@@ -11,8 +11,6 @@ export default defineConfig({
         vue(),
     ],
     server: {
-        https:
-            true,
         hmr: {
             host: 'localhost'
         }
