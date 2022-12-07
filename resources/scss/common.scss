@@ -258,9 +258,7 @@ body {
 
 .side-menu-item{
     background-color: rgba(0, 0, 0, 0.13);
-    // width: 48.8%;
     padding: 12px 15px;
-    // line-height: 1;
     display: block;
     margin-bottom: 7px;
     position: relative;
@@ -274,7 +272,6 @@ body {
 .side-menu-item__inner{
     display: flex;
     justify-content: space-between;
-    // align-items: flex-end;
     border-left: 3px solid #fff;
     flex-direction: column;
     background: linear-gradient(315deg,rgba(255, 255, 255, 0.4) 10px,transparent 10px, transparent 12px,rgba(255, 255, 255, 0.4) 12px,rgba(255, 255, 255, 0.4) 14px, transparent 14px);
@@ -283,7 +280,6 @@ body {
     font-family: SenobiGothic;
     font-size: 18px;
     font-weight: 100;
-    // border-left: 3px solid #fff;
     line-height: 0.9;
     padding: 0px 0px 6px 8px;
 }
@@ -296,11 +292,9 @@ body {
 }
 .side-menu-item__sub-text{
     font-size: 10px;
-    // border-left: 3px solid #fff;
     padding-left: 8px;
     line-height: 0.9;
     transform: scale(0.9);
-    // margin-left:5px;
     transform-origin:left bottom;
 }
 .side-menu-sub-item{

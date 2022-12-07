@@ -39,10 +39,8 @@
     width: 100%;
     font-weight: bold;
     margin-top: 5px;
-    
 }
 .profile-user-text{
-    // margin-top: 5px;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
     padding-top: 5px;
 }
@@ -52,36 +50,21 @@
 .profile-follow-number{
     margin: 0 5px;
     color: #d3d3d3;
-    // text-decoration: underline;
 }
 .profile-btn-box{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    // flex-direction: column;
     margin-top: 10px;
 }
-
 .mypage-prof-box .follow-box{
     margin-top: 15px;
 }
 .mypage-prof-box .follow-box a{
     margin: 0 8px;
 }
-// .mypage-prof-box .btn-box a{
-//     margin-top: 15px;
-//     display: inline-block;
-//     border: 1px solid #000;
-//     border-radius: 15px;
-//     padding:5px 15px;
-// }
-// .mypage-prof-box .btn-box a.follow{
-//     background-color: #ebebeb;
-// }
 
-.mypage-list{
-}
 .mypage-list-item{
     background-color: rgba(255, 255, 255, 0.07);
     padding: 20px 15px 20px 20px;
@@ -90,7 +73,6 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    /* box-shadow: rgb(0 ,0 ,0 , 0.1) 0px 0px 10px; */
 }
 .mypage-list-item--unread::after{
     content:"";

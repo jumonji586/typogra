@@ -1,5 +1,4 @@
 
-
 .theme-name{
     font-size: 18px;
     line-height: 1;
@@ -7,14 +6,6 @@
     font-weight: 100;
     margin-bottom: 7px;
 }
-// .theme-name::after{
-//     content:"";
-//     display: inline-block;
-//     width: 25px;
-//     height: 4px;
-//     background-color: #fff;
-//     margin-top: 13px;
-// }
 
 .post-box1{
     display: grid;
@@ -23,9 +14,6 @@
     " item1 ..... ..... ..... ..... " 
     " item1 ..... item4 ..... item5 " 
     / 48.5% 3% 22.75% 3% 22.75%;
-}
-.post-item{
-    // width: 100%;
 }
 .post-item:nth-of-type(1){
     grid-area:item1;
@@ -43,7 +31,6 @@
 .post-item:nth-of-type(5){
     grid-area:item5;
 }
-
 .post-item-img-box{
     background-color: #fff;
     display: block;
@@ -52,10 +39,6 @@
     overflow: hidden;
     border: 6px solid #fff;
 }
-.post-item-img-box--empty{
-    // background-color: #90a2ae;
-}
-
 .post-item-img-box__link{
     position: absolute;
     width: 100%;
@@ -90,7 +73,6 @@
 .post-item-data-box__date{
     font-size: 10px;
     line-height: 1;
-
 }
 .post-item-data-box__user-name{
     font-size: 10px;
@@ -104,7 +86,6 @@
     font-size: 10px;
     line-height: 1;
 }
-
 .post-list-btn-box{
     display: flex;
     justify-content: space-between;
@@ -113,17 +94,14 @@
     background-color: #464F55;
     width: 48.8%;
     padding: 12px 15px;
-    // line-height: 1;
     display: block;
 }
 .post-list-btn-box__btn:hover{
-    // background-color:#5a646b ;
     transform: scale(1.05);
 }
 .post-list-btn-box__btn-inner{
     display: flex;
     justify-content: space-between;
-    // align-items: flex-end;
     flex-direction: column;
     border-left: 4px solid #fff;
     background: linear-gradient(315deg,rgba(255, 255, 255, 0.4) 13px,transparent 13px, transparent 15px,rgba(255, 255, 255, 0.4) 15px,rgba(255, 255, 255, 0.4) 17px, transparent 17px);
@@ -132,7 +110,6 @@
     font-family: SenobiGothic;
     font-size: 22px;
     font-weight: 100;
-    // border-left: 4px solid #fff;
     line-height: 0.9;
     padding: 0px 0px 8px 10px;
 }
@@ -145,10 +122,8 @@
 }
 .post-list-btn-box__sub-text{
     font-size: 10px;
-    // border-left: 4px solid #fff;
     padding-left: 10px;
     line-height: 0.9;
-    // margin-left:5px;
 }
 
 
@@ -157,12 +132,8 @@
     display: flex;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.1);
-    // background-color: #464F55;
     padding: 20px;
     margin-top: 5px;
-    // width: max-content;
-    // margin: 0 auto;
-    // width: 900px;
 }
 .post-detail-img-box{
     max-width: 450px;
@@ -193,12 +164,9 @@
 }
 
 .post-detail-data-box{
-    // background-color: rgba(0, 0, 0, 0.1);
-    // padding: 20px;
     min-width: 260px;
     flex-grow: 1;
     margin-left: 20px;
-    // transform: translate(-50px,50px);
     display: flex;
     flex-direction: column;
 }
