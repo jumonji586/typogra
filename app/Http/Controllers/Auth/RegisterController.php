@@ -101,24 +101,15 @@ class RegisterController extends Controller
     public function showProviderUserRegistrationForm(Request $request, string $provider)
     {
         $token = $request->token;
-        $tokenSecret = $request->tokenSecret;
 
-        if($provider === "google"){
-            $providerUser = Socialite::driver($provider)->userFromToken($token);
-        }else if($provider === "twitter"){
-            $providerUser = Socialite::driver($provider)->userFromToken($token);
-            // $providerUser = Socialite::driver($provider)->userFromTokenAndSecret($token, $tokenSecret);
-        }
-
+        $providerUser = Socialite::driver($provider)->userFromToken($token);
 
         return view('auth.social_register', [
             'provider' => $provider,
             'email' => $providerUser->getEmail(),
             'name' => $providerUser->getName(),
-            // 'provider_id' => $providerUser->getId(),
             'prof_image_path' => $providerUser->getAvatar(),
             'token' => $token,
-            'tokenSecret' => $tokenSecret,
         ]);
     }
     public function registerProviderUser(Request $request, string $provider)
@@ -128,18 +119,11 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'rule-privacy' => ['accepted'],
             'token' => ['required', 'string'],
-            'tokenSecret' => ['required', 'string'],
         ]);
         
         $token = $request->token;
-        $tokenSecret = $request->tokenSecret;
 
-        if($provider === "google"){
-            $providerUser = Socialite::driver($provider)->userFromToken($token);
-        }else if($provider === "twitter"){
-            $providerUser = Socialite::driver($provider)->userFromToken($token);
-            // $providerUser = Socialite::driver($provider)->userFromTokenAndSecret($token, $tokenSecret);
-        }
+        $providerUser = Socialite::driver($provider)->userFromToken($token);
 
         $user = User::create([
             'name' => $request->name,

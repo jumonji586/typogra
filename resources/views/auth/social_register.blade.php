@@ -13,7 +13,6 @@
       <p class="page-type2__item-name">※プロフィール画像はログイン後に変更できます。</p>
       <img class="page-type2__user-icon" src="{{ $prof_image_path }}" alt="">
       <input type="hidden" name="token" value="{{ $token }}">
-      <input type="hidden" name="tokenSecret" value="{{ $tokenSecret }}">
       <input type="hidden" name="provider_name" value="{{ $provider }}">
 
       <p class="page-type2__item-name">ユーザー名（※全角12・半角24文字以内）</p>

@@ -46,15 +46,8 @@ class LoginController extends Controller
     }
     public function handleProviderCallback(Request $request, string $provider)
     {
-        if($provider === "twitter"){
-            // $providerUser = Socialite::driver($provider)->user();
-            // $tokenSecret = $providerUser->tokenSecret;
-            $providerUser = Socialite::driver($provider)->stateless()->user();
-            $tokenSecret = "hoge";
-        }else if($provider === "google"){
-            $providerUser = Socialite::driver($provider)->stateless()->user();
-            $tokenSecret = "hoge";
-        }
+        $providerUser = Socialite::driver($provider)->stateless()->user();
+
         // ユーザーテーブルの中からprovider_nameとprovider_idが一致するものが
         // あればログインさせる。なければ登録画面へ。
         $user = User::where('provider_name', $provider)->where('provider_id',$providerUser->getId())->first();
@@ -62,11 +55,9 @@ class LoginController extends Controller
             $this->guard()->login($user, true);
             return $this->sendLoginResponse($request);
         }
-
         return redirect()->route('register.{provider}', [
             'provider' => $provider,
             'token' => $providerUser->token,
-            'tokenSecret' => $tokenSecret,
         ]);     
 
     }
