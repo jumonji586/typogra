@@ -2,6 +2,14 @@
 <html lang="ja">
 
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7NGRHZ7MY"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P7NGRHZ7MY');
+  </script>
   <meta charset="utf-8">
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
