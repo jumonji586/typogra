@@ -514,6 +514,34 @@ body {
 .smp-message{
     display: none;
 }
+.guest-area{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 50;
+}
+.guest-area__list-box{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.guest-area__list-box-inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.guest-area__lead{
+    font-size: 14px;
+    line-height: 1.8;
+}
+.guest-area__list-box-inner li{
+    width: 49%;
+    line-height: 1.8;
+}
+.guest-area__list-title{
+    font-weight: bold;
+    line-height: 1.8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
 @media(max-width:1650px){
     .body-side-text{
         right:15px;

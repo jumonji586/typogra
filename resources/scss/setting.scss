@@ -33,12 +33,15 @@
         /* iosのデフォルトスタイル打消し */
         -webkit-appearance: none;
         border-radius: 0;
+        cursor: pointer;
     }
     img{
         max-width: 100%;
     }
 .wid100{width:100% !important;}
 br{line-height:0;}
+.m0auto{margin:0 auto;}
+.disp-none{display:none;}
 .underline{text-decoration:underline}
 .relative{position:relative;}
 .fw-b{font-weight: bold;}
