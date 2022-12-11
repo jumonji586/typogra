@@ -54,13 +54,16 @@ body {
     height: 130px;
     padding-top: 50px;
 }
-.header-logo{
+.header-logo-box{
     display: block;
     width: 320px;
+    // ↑header-logoにwidth指定するとhover時にクリック押しにくくなるのでこちらにheader-logo-box指定
+    margin: 0 auto;
+}
+.header-logo{
     position: relative;
     transition: all 0.5s;
     transform-style: preserve-3d;
-    margin: 0 auto;
 }
 .header-logo:hover{
     transform:  rotate3d(1, 0, 0, -90deg) ;
@@ -73,12 +76,13 @@ body {
 }
 .header-logo__img--2{
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     transform:  rotate3d(1, 0, 0, 90deg) ;
 }
 @media(max-width:1650px){
-    .header-logo{
+    .header-logo-box{
         width: 290px;
     }
     .header{
