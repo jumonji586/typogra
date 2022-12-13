@@ -1,7 +1,8 @@
 /* ----全体--------------------------------------------------------- */
+$color-gray3:#383F43;
 
 body {
-    background-color: #6b7b86;
+    background-color: #5c6972;
     counter-reset:count-number;
 }
 
@@ -119,7 +120,7 @@ body {
 .upper-nav1-text-btn{
     display: flex;
     align-items: center;
-    border: double 4px #6B7B86;
+    border: double 4px #5c6972;
     font-size: 14px;
     font-weight: 100;
     font-family: SenobiGothic;
@@ -127,7 +128,7 @@ body {
     padding: 6px 12px;
     margin-right: 7px;
     border-radius: 20px;
-    color: #606E78;
+    color: #4A545B;
     background-color: #fff;
     letter-spacing: -0.2em;
 }
@@ -261,7 +262,7 @@ body {
 }
 
 .side-menu-item{
-    background-color: rgba(0, 0, 0, 0.13);
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 12px 15px;
     display: block;
     margin-bottom: 7px;
@@ -526,7 +527,7 @@ body {
 }
 .guest-area__list-box{
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #4A545B;
 }
 .guest-area__list-box-inner{
     display: flex;
@@ -584,7 +585,7 @@ body {
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        background-color: #6B7B86;
+        background-color: #5c6972;
         padding: 5%;
     }
     .smp-message__logo{

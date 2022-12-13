@@ -134,7 +134,7 @@ export default {
 }
 .crop-modal {
   margin: auto;
-  background-color: #6B7B86;
+  background-color: #4A545B;
   padding: 30px;
   max-width: 300px;
   width: 100%;

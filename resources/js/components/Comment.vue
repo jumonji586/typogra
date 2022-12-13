@@ -180,7 +180,7 @@ export default {
   padding: 5px 10px;
   border: solid 1px #747474;
   color: #000;
-  /* border: solid 1px #606E78; */
+  /* border: solid 1px #4A545B; */
   border: none;
   -ms-overflow-style: none;
   scrollbar-width: none;

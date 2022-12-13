@@ -240,7 +240,7 @@ export default {
 }
 .reply-box-open-btn {
   color: #ffffff;
-  background-color: #606E78;
+  background-color: #4A545B;
   display: inline-block;
   margin-top: 5px;
   font-size: 12px;

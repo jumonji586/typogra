@@ -107,24 +107,21 @@ export default {
   border-radius: 50%;
   margin-left: 8px;
   transition: all 0.2s;
-  background-color: #6B7B86;
+  background-color: #5c6972;
 
 }
 .post-edit-menu-box.active{
-  background-color: #515C63;
+  background-color: #4A545B;
 }
 .post-edit-menu {
   position: absolute;
   width: 150px;
   z-index:25;
-  background-color: #FFE819;
-  background-color: #fff;
-  background-color: #515C63;
+  background-color: #383F43;
   right: 0;
   bottom: -15px;
   right: 0px;
   transform: translate(0,100%)scale(0.01);
-  /* padding-bottom:15px ; */
   box-shadow: rgba(0, 0, 0,0.1) 0 0 5px;
   transition: all 0.1s;
   transform-origin: top right;
@@ -173,13 +170,11 @@ export default {
   background-color: rgba(0, 0, 0, 0.85);
   height: 100%;
   width: 100%;
-  /* opacity: 0;
-  visibility: hidden; */
 }
 
 .post-edit-message-box{
   position: relative;
-  background-color: #606E78;
+  background-color: #4A545B;
   margin:auto;
   padding:50px;
   transform: scale(0.01);
