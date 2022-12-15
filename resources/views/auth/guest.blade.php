@@ -36,7 +36,8 @@
                 </ul>
             </div>
             <div class="page-type2-btn-box mt30">
-                <input class="page-type2-btn-box__btn m0auto" type="submit" value="OK">
+                <a class="page-type2-btn-box__btn" href="/">キャンセル</a>
+                <input class="page-type2-btn-box__btn" type="submit" value="OK">
             </div>
         </form>
     </div>

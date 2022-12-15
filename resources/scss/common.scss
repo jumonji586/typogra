@@ -1,6 +1,4 @@
 /* ----全体--------------------------------------------------------- */
-$color-gray3:#383F43;
-
 body {
     background-color: #5c6972;
     counter-reset:count-number;
@@ -522,7 +520,7 @@ body {
 }
 .guest-area__list-box{
     padding: 20px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: #434a4e;
 }
 .guest-area__list-box-inner{
     display: flex;
