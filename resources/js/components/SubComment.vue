@@ -240,26 +240,23 @@ export default {
 }
 .reply-box-open-btn {
   color: #ffffff;
-  background-color: #4A545B;
+  background-color: #4f5a61;
   display: inline-block;
   margin-top: 5px;
   font-size: 12px;
   user-select: none;
-  /* border: 1px solid #ffffff; */
   border-radius: 15px;
   padding: 5px 15px;
 }
 .to-user-name {
   color: #d3d3d3;
   display: inline-block;
-  /* text-decoration: underline; */
   margin-right: 5px;
 }
 .reply-list-btn,
 .reply-list-btn span {
   color: #d3d3d3;
   display: inline-block;
-  /* text-decoration: underline; */
   margin-top: 5px;
   user-select: none;
 }
