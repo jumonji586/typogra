@@ -87,3 +87,7 @@ Route::get('/privacy-policy', function () {
     return view('privacy-policy');
 })->name('privacy-policy');
 
+// guest
+Route::get('/guest', function () {
+    return view('auth.guest');
+})->middleware('guest')->name('guest');
