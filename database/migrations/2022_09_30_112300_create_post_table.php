@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->string('image_path'); 
             $table->string('thumb_image_path'); 
+            $table->string('large_thumb_image_path'); 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('status')->nullable(); 
             $table->timestamps();

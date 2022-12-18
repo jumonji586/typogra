@@ -27,7 +27,7 @@ class PostRequest extends FormRequest
     {
         return [
             'description' => ['nullable','string',new textMaxWidth(160)],
-            'image'=>'required|file|image|mimes:jpg,png,gif,jpeg',
+            'image'=>'required|file|image|mimes:jpg,png,gif,jpeg,jfif',
             'theme_id'=>'required|numeric',
         ];
     }
@@ -40,22 +40,23 @@ class PostRequest extends FormRequest
         ];
     }
     public function imageProcessing(){
+        // 二重送信防止用
         $this->session()->regenerateToken();
-        // ↑二重送信防止用
-
+        
         $thistime = date("YmdHis");
-        // $image->orientate();をしとかないと、スマホでアップされた画像が勝手に横向きになったりするので要注意
-        $save_image_path = "storage/uploads/illust_image/" . $this->user()->id . "illust" . $thistime . ".jpg";
-        Image::make($this->file('image'))->orientate()->resize(1500, null, function ($constraint) {
+        // $image->orientate();をしておかないと、スマホでアップされた画像が勝手に横向きになったりするので注意
+        $save_image_path = "storage/uploads/illust_image/" . $this->user()->id . "illust" . $thistime;
+        $image = Image::make($this->file('image'));
+        $image->orientate()->resize(1500, null, function ($constraint) {
             // 縦横比を保持したままにする
             $constraint->aspectRatio();
             // 小さい画像は大きくしない
             $constraint->upsize();
-        })->save($save_image_path, 70);
+        })->save($save_image_path.".webp", 70)->save($save_image_path.".jpg", 70);
 
-        // サムネイル用
-        $width = Image::make($this->file('image'))->orientate()->width();
-        $height = Image::make($this->file('image'))->orientate()->height();
+        // ここからサムネイル用の処理
+        $width = $image->orientate()->width();
+        $height = $image->orientate()->height();
 
         if ($width >= $height) {
             $cropX = round(($width - $height) / 2);
@@ -66,9 +67,12 @@ class PostRequest extends FormRequest
             $cropY = round(($height - $width) / 2);
             $keySize = $width;
         }
-        $save_thumb_path = "storage/uploads/illust_thumb/" . $this->user()->id . "thumb" . $thistime . ".jpg";
+        $save_thumb_path = "storage/uploads/illust_thumb/" . $this->user()->id . "thumb" . $thistime;
+        $save_large_thumb_path = "storage/uploads/illust_large_thumb/" . $this->user()->id . "large_thumb" . $thistime;
 
-        Image::make($this->file('image'))->orientate()->crop($keySize, $keySize, $cropX, $cropY)->resize(300, 300)->save($save_thumb_path, 70);
-        return [$save_image_path,$save_thumb_path];
+        $image->orientate()->crop($keySize, $keySize, $cropX, $cropY)->resize(700, 700)->save($save_large_thumb_path.".webp", 70)->save($save_large_thumb_path.".jpg", 70)->resize(250, 250)->save($save_thumb_path.".webp", 70)->save($save_thumb_path.".jpg", 70);
+
+        // PostControllerに渡す
+        return [$save_image_path,$save_thumb_path,$save_large_thumb_path];
     }
 }

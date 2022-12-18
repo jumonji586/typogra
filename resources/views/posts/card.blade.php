@@ -1,12 +1,16 @@
 <div class="post-item">
     <div class="post-item-img-box">
-        <img class="post-item-img-box__img" 
         @if ($loop->first)
-        src="{{ $post->image_path }}" 
+        <picture>
+            <source srcset="{{ $post->large_thumb_image_path.'.webp' }}" type="image/webp">
+            <img class="post-item-img-box__img" src="{{ $post->large_thumb_image_path.'.jpg' }}">
+        </picture>
         @else
-        src="{{ $post->thumb_image_path }}" 
+        <picture>
+            <source srcset="{{ $post->thumb_image_path.'.webp' }}" type="image/webp">
+            <img class="post-item-img-box__img" src="{{ $post->thumb_image_path.'.jpg' }}">
+        </picture>
         @endif
-        alt="">
         <a class="post-item-img-box__link" href="{{ route('posts.show', ['display_id' => $post->display_id]) }}"></a>
     </div>
     <div class="post-item-data-box">

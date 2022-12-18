@@ -6,9 +6,15 @@
 
 <div class="post-detail">
     <div class="post-detail-img-box {{ $imgClass }} ">
-        <img class="post-detail-img-box__img" src="{{ $post->image_path }}" alt="">
+        <picture>
+            <source srcset="{{ $post->large_thumb_image_path.'.webp' }}" type="image/webp">
+            <img class="post-detail-img-box__img" src="{{ $post->large_thumb_image_path.'.jpg' }}">
+        </picture>
         <common-modal>
-            <img class="post-detail-modal-img" src="{{ $post->image_path }}" alt="">
+            <picture>
+                <source srcset="{{ $post->image_path.'.webp' }}" type="image/webp">
+                <img class="post-detail-modal-img" src="{{ $post->image_path.'.jpg' }}">
+            </picture>
         </common-modal>
     </div>
     <div class="post-detail-data-box">

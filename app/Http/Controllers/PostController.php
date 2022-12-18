@@ -94,10 +94,11 @@ class PostController extends Controller
     public function store(PostRequest $request, Post $post)
     {
         
-        [$save_image_path, $save_thumb_path] = $request->imageProcessing();
+        [$save_image_path, $save_thumb_path,$save_large_thumb_path] = $request->imageProcessing();
 
         $post->image_path = "/" . $save_image_path;
         $post->thumb_image_path = "/" . $save_thumb_path;
+        $post->large_thumb_image_path = "/" . $save_large_thumb_path;
 
         $post->description = $request->description;
         $post->theme_id = $request->theme_id;
@@ -116,7 +117,7 @@ class PostController extends Controller
  
         // $imgSize = getimagesize((empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $targetPost->image_path);
         // XAMPP環境だと↑でOKだったがdockerだとエラー出たのでいったん↓に変更。
-        $imgSize = getimagesize(ltrim($targetPost->image_path, '/'));
+        $imgSize = getimagesize(ltrim($targetPost->image_path.'.jpg', '/'));
         
         $aspect = $imgSize[0] / $imgSize[1];
         if ($aspect > 1.5) {
