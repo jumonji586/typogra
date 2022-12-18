@@ -3,12 +3,12 @@
         @if ($loop->first)
         <picture>
             <source srcset="{{ $post->large_thumb_image_path.'.webp' }}" type="image/webp">
-            <img class="post-item-img-box__img" src="{{ $post->large_thumb_image_path.'.jpg' }}">
+            <img class="post-item-img-box__img" src="{{ $post->large_thumb_image_path.'.jpg' }}" loading="lazy">
         </picture>
         @else
         <picture>
             <source srcset="{{ $post->thumb_image_path.'.webp' }}" type="image/webp">
-            <img class="post-item-img-box__img" src="{{ $post->thumb_image_path.'.jpg' }}">
+            <img class="post-item-img-box__img" src="{{ $post->thumb_image_path.'.jpg' }}" loading="lazy">
         </picture>
         @endif
         <a class="post-item-img-box__link" href="{{ route('posts.show', ['display_id' => $post->display_id]) }}"></a>
