@@ -109,7 +109,7 @@ class PostController extends Controller
         $post->save();
 
 
-        return redirect('/#new')->with('message', '投稿が完了しました');
+        return redirect('/')->with('message', '投稿が完了しました');
     }
     public function show(string $display_id, Post $post)
     {
